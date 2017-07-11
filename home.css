@@ -1,0 +1,67 @@
+body,ul,p,h1,h2,h3,h4,h5,dl,dd,form,input,textarea,select{  padding: 0px;  margin: 0px;  font-family: Arial; }
+li{  list-style: none;  }
+image{border: none;}
+a{text-decoration: none;}
+a:hover{text-decoration: underline;}
+body {background: #fff url("images/body-bg4.gif") repeat-x;}
+
+
+#top {
+    width: auto;
+    height: 50px;
+    margin: 0;
+    background: #CBD2E4;
+}
+
+.top_logo li{
+    float: left;
+    line-height: 45px;
+}
+.top_logo  img{
+    width: 100px;
+    height: 40px;
+    margin-left: 105px;
+    margin-top: 3px;
+}
+#top_sb{
+    width: 325px;
+    height: 30px;
+    margin-left: 45px;
+}
+
+
+
+.top_menu{ float: left;  }
+.top_menu ul{
+}
+.top_menu li{
+    float: left;
+    font-size: 13px;
+    line-height: 45px;
+    padding-right: 18px;
+    margin-left: 25px;
+}
+.top_menu   a{
+    color: black;
+    margin-top: 30px;
+}
+.top_menu .home{ margin-left: 95px;}
+
+
+.top_bar{ float: right;}
+.top_bar li{
+    float: left;
+    font-size: 13px;
+    line-height: 45px;
+    margin-left: 25px;
+}
+.top_bar img{width: 30px;height: 24px; margin-top: 10px;}
+.top_bar a{color: black;margin-top: 30px;}
+.top_bar .top_bar_login{margin-right: 80px;}
+
+#body{
+    width: auto;
+}
+
+
+
