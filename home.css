@@ -97,9 +97,31 @@ body{background: #EBEEF5  ;}
     width: 60%;
     float: left;
     border-right: 1px solid #CBD2E4;
-    border-left: 1px solid #CBD2E4;
+    border-left: 1px solid #CBD2E4;}
+
+
+#body-center .center-play{
+    height: 60px;
+    width: 200px;
 
 }
+#body-center .box{position:relative;width:600px;margin:10px 50px;}
+.cont{height:200px;overflow:hidden;}
+.item{
+    background:rgba(0,0,0,0.5);
+    color:#fff;
+    font-size:100px;
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    text-align:right;
+    line-height:80px;
+    height:80px;
+}
+.item a{margin-right:10px;cursor:pointer;text-shadow:0 0 3px rgba(0,0,0,0.8);}
+a.seld{color:#06C;}
+a.hide{display:none;}
 
 #body-center .center-nav{
     height: 60px;
