@@ -22,8 +22,73 @@
             n = n >=(count - 1)?0: ++n;
             $(".item a").eq(n).trigger('click');
         }
-    </script>
 
+
+
+        window.onload=function topshow() {
+            var home =document.getElementById('myhome');
+            var list1 =document.getElementById('menu-list1');
+            var homeicon =document.getElementById('myhomeicon');
+
+
+            var userzx =document.getElementById('user');
+            var list2 =document.getElementById('menu-list2');
+            var usericon =document.getElementById('usericon');
+
+
+            var mail =document.getElementById('bar_email');
+            var maillist=document.getElementById('bar-list1');
+            var mailicon=document.getElementById('mail_icon');
+
+
+
+
+
+            home.onmouseover = homeshow;
+            home.onmouseout =homehide;
+
+            function homeshow() {
+                list1.style.display='block';
+                homeicon.style.color='#95A6C2';
+
+            }
+            function homehide() {
+
+                list1.style.display='none';
+                homeicon.style.color='#fff';
+            }
+
+
+            userzx.onmouseover=usershow;
+            userzx.onmouseout=userhide;
+
+            function usershow() {
+                list2.style.display='block';
+                usericon.style.color='#95A6C2';
+
+            }
+            function userhide() {
+
+                list2.style.display='none';
+                usericon.style.color='#fff';
+            }
+
+
+            mail.onmouseover=mailshow;
+            mail.onmouseout=mailhide;
+
+            function mailshow() {
+                maillist.style.display='block';
+                mailicon.src='images/email-2.png';
+            }
+            function mailhide() {
+                maillist.style.display='none';
+                mailicon.src='images/email.png';
+            }
+        }
+
+
+    </script>
 </head>
 <body>
 
@@ -41,18 +106,52 @@
 
     </ul>
     <ul class="top_menu">
-        <li class="home"> <a href="#">首页</a></li>
-        <li class="myhome"> <a href="#">个人主页</a></li>
-        <li class="user"> <a href="#">用户中心</a></li>
+        <li id="home"  class="menu-title">
+            <a href="#" >首页</a>
+        </li>
+        <li  class="menu-title" id="myhome">
+            <a href="#" id="myhomeicon" >个人主页</a>
+
+            <ul class="menu-list" id="menu-list1">
+                <li> 我的文章</li>
+                  <li> 我的收藏</li>
+                  <li> 我的好友</li>
+            </ul>
+
+        </li>
+        <li id="user" class="menu-title">
+            <a href="#" id="usericon" >用户中心</a>
+            <ul class="menu-list" id="menu-list2">
+                <li> 个人信息设置</li>
+                <li> 账号安全设置</li>
+                <li> 消息设置</li>
+            </ul>
+        </li>
     </ul>
-    <ul class="top_bar">
-        <li><img src="images/email.png"></li>
+    <ul class="top_bar" >
+        <li id="bar_email">
+            <a href="#" >
+                <img id="mail_icon" src="images/email.png">
+
+            </a>
+
+                <ul class="bar-list" id="bar-list1">
+                    <li id="barlist-message">我的消息</li>
+                    <li>评论</li>
+                    <li>赞</li>
+                    <li>帮助</li>
+
+                </ul>
+
+
+        </li>
         <li><a href="#" class="top_bar_login"> 注册|登录</a></li>
     </ul>
 
 
 
 </div>
+
 <div id="body" >
     <div id="body-left">
         <ul class="left-ul">
@@ -65,19 +164,19 @@
     </div>
     <div id="body-center">
         <div class="box">
-        <div class="cont">
-            <a><img src="images/userlogo.png" /></a>
-            <a class="hide"><img src="images/page1.png" /></a>
-            <a class="hide"><img src="images/userlogo.png" /></a>
-            <a class="hide"><img src="images/userlogo.png" /></a>
+           <div class="cont">
+            <a><img src="images/page.png" /></a>
+            <a class="hide"><img src="images/page2.png" /></a>
+            <a class="hide"><img src="images/page3.png" /></a>
+            <a class="hide"><img src="images/page4.png" /></a>
         </div>
-        <div class="item">
-            <a class="seld">·</a>
-            <a>·</a>
-            <a>·</a>
-            <a>·</a>
-        </div>
-    </div>
+           <div class="item">
+                <a class="seld">·</a>
+                <a>·</a>
+                <a>·</a>
+                <a>·</a>
+           </div>
+         </div>
         <ul class="center-nav">
             <li class="hot">热门话题</li>
             <li class="hot">关注动态</li>
@@ -155,8 +254,35 @@ A女：真太可惜了，你要打开冰箱看一看 咱俩都死不了了！</s
     </div>
 
 </div>
-<div id="foot">
+<footer>
 
-</div>
+
+        <div class="foot1">
+            联系我们
+            <ul >
+                <li>tel:1234567890</li>
+                <li>email:12345678@qq.com</li>
+                <li>time:9:00-18:00</li>
+            </ul>
+        </div>
+        <div class="foot">
+            合作&认证
+            <ul>
+                <li><a href="http://www.scuec.edu.cn" target="_blank">中南民族大学</a></li>
+                <li><a href="http://www.ruanko.com" target="_blank">软酷网络科技有限公司</a></li>
+            </ul>
+        </div>
+        <div class="foot">
+            淘趣帮助
+            <ul>
+                <li>常见问题</li>
+                <li>自助服务</li>
+            </ul>
+        </div>
+
+
+
+
+</footer>
 </body>
 </html>
