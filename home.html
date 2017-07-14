@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>hi,趣友网的首页</title>
     <link href="home.css" rel="stylesheet">
+    <link href="home.js" rel="script">
     <script src="jquery-2.1.1/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript">
+        <!--轮播功能-->
         var n = 0;
         $(document).ready(function(){
             count=$(".cont a").length;//显示区域的内容长度
@@ -24,68 +26,134 @@
         }
 
 
-
+//下拉菜单
         window.onload=function topshow() {
-            var home =document.getElementById('myhome');
-            var list1 =document.getElementById('menu-list1');
-            var homeicon =document.getElementById('myhomeicon');
+            var home = document.getElementById('myhome');
+            var list1 = document.getElementById('menu-list1');
+            var homeicon = document.getElementById('myhomeicon');
 
 
-            var userzx =document.getElementById('user');
-            var list2 =document.getElementById('menu-list2');
-            var usericon =document.getElementById('usericon');
+            var userzx = document.getElementById('user');
+            var list2 = document.getElementById('menu-list2');
+            var usericon = document.getElementById('usericon');
 
 
-            var mail =document.getElementById('bar_email');
-            var maillist=document.getElementById('bar-list1');
-            var mailicon=document.getElementById('mail_icon');
-
-
-
+            var mail = document.getElementById('bar_email');
+            var maillist = document.getElementById('bar-list1');
+            var mailicon = document.getElementById('mail_icon');
 
 
             home.onmouseover = homeshow;
-            home.onmouseout =homehide;
+            home.onmouseout = homehide;
 
             function homeshow() {
-                list1.style.display='block';
-                homeicon.style.color='#95A6C2';
+                list1.style.display = 'block';
+                homeicon.style.color = '#95A6C2';
 
             }
+
             function homehide() {
 
-                list1.style.display='none';
-                homeicon.style.color='#fff';
+                list1.style.display = 'none';
+                homeicon.style.color = '#fff';
             }
 
 
-            userzx.onmouseover=usershow;
-            userzx.onmouseout=userhide;
+            userzx.onmouseover = usershow;
+            userzx.onmouseout = userhide;
 
             function usershow() {
-                list2.style.display='block';
-                usericon.style.color='#95A6C2';
+                list2.style.display = 'block';
+                usericon.style.color = '#95A6C2';
 
             }
+
             function userhide() {
 
-                list2.style.display='none';
-                usericon.style.color='#fff';
+                list2.style.display = 'none';
+                usericon.style.color = '#fff';
             }
 
 
-            mail.onmouseover=mailshow;
-            mail.onmouseout=mailhide;
+            mail.onmouseover = mailshow;
+            mail.onmouseout = mailhide;
 
             function mailshow() {
-                maillist.style.display='block';
-                mailicon.src='images/email-2.png';
+                maillist.style.display = 'block';
+                mailicon.src = 'images/email-2.png';
             }
+
             function mailhide() {
-                maillist.style.display='none';
-                mailicon.src='images/email.png';
+                maillist.style.display = 'none';
+                mailicon.src = 'images/email.png';
             }
         }
+
+            //        中部tab面板替换
+            window.onload=function  tabshow() {
+                var tabs=document.getElementsByClassName("center-tab")[0].getElementsByTagName("li");
+                var contents=document.getElementsByClassName("center-panel")[0].getElementsByTagName("ul");
+//                alert(contents)
+                (function changetab() {
+                    for (var i=0;i<tabs.length;i++){
+                        tabs[i].onclick = showTab;
+
+                    }
+
+                })()
+                function showTab() {
+                    for(var i = 0, len = tabs.length; i < len; i++) {
+                        if(tabs[i] === this) {
+                            tabs[i].className = 'tabcur';
+                            contents[i].className = 'cur';
+                        } else {
+//                            alert(contents[i]);
+
+                            tabs[i].className = '';
+                            contents[i].className = '';
+                        }
+                    }
+
+                }
+
+//            var tCon=document.getElementById("pannels").getElementsByTagName("div");
+//            var timer=null;
+//
+//            for (var i=0;i <tLi.length;i++){
+//                tLi[i].index=i;
+//                tLi[i].onmouseover=function () {
+//                    show(this.index);
+//
+//                }
+//            }
+//
+//            function show (a) {
+//
+//                index =a;
+//                var alpha=0;
+//                for (var j=0;j<tLi.length;j++){
+//                    tLi[j].className="";
+//                    tCon[j].className=""
+//                    tCon.style.opacity=0;
+//                    tCon[j].style.filter = "alpha(opacity=0)";
+//                }
+//
+//                tLi[index].className="cur";
+//                clearInterval(timer);
+//                timer = setInterval(function() {
+//                            alpha += 2;
+//                            alpha > 100 && (alpha = 100);
+//                            tCon[index].style.opacity = alpha / 100;
+//                            tCon[index].style.filter = "alpha(opacity=" + alpha + ")";
+//                            alpha == 100 && clearInterval(timer);
+//                        },
+//                        5)
+//
+//            }
+//
+            }
+
+
 
 
     </script>
@@ -163,69 +231,133 @@
         </ul>
     </div>
     <div id="body-center">
-        <div class="box">
-           <div class="cont">
-            <a><img src="images/page.png" /></a>
-            <a class="hide"><img src="images/page2.png" /></a>
-            <a class="hide"><img src="images/page3.png" /></a>
-            <a class="hide"><img src="images/page4.png" /></a>
-        </div>
-           <div class="item">
-                <a class="seld">·</a>
-                <a>·</a>
-                <a>·</a>
-                <a>·</a>
-           </div>
-         </div>
-        <ul class="center-nav">
-            <li class="hot">热门话题</li>
-            <li class="hot">关注动态</li>
-        </ul>
-        <div class="center-panel">
-            <ul class="post-list">
-                <li class="post">
-                    <div class="post-user">
-                        <span><img src="images/userlogo.png" class="post-photo"></span>
+        <!--轮播-->
+            <div class="box">
+                <div class="cont">
+                    <a><img src="images/page.png" /></a>
+                    <a class="hide"><img src="images/page2.png" /></a>
+                    <a class="hide"><img src="images/page3.png" /></a>
+                    <a class="hide"><img src="images/page4.png" /></a>
+                </div>
+                <div class="item">
+                    <a class="seld">·</a>
+                    <a>·</a>
+                    <a>·</a>
+                    <a>·</a>
+                </div>
+            </div>
+        <div class="center-tab" >
+            <!--tab切换-->
 
-                    </div>
-                    <div class="list-right">
-                        <div class="post-name">用户名</div>
-                        <div class="post-bar" >趣点1</div>
-                      </div>
-                    <div class="list-botton">
-                        <a class="post-content" href="#" target="_blank">
-                            <div class="title"><span>从设置密码看你的感情 楼下大波经典文字笑话</span></div>
-                            <div class="data-reactid">
-                                <div class="content">
-                                    <div class="desc">
+
+            <!--中间标题栏-->
+
+            <div class="center-nav" id="centertitle">
+                    <ul class="center-tab">
+                        <li class="tabcur" >热门话题</li>
+                        <li >关注动态</li>
+                    </ul>
+
+            </div>
+            <!--下面内容部分-->
+            <div class="center-panel" id="pannels" >
+                <!--热门话题面板-->
+                <div  id="hot-cur">
+                    <ul class="cur">
+                        <li class="post">
+                            <div class="post-user">
+                                <span><img src="images/userlogo.png" class="post-photo"></span>
+
+                            </div>
+                            <div class="list-right">
+                                <div class="post-name">用户名</div>
+                                <div class="post-bar" >趣点1</div>
+                            </div>
+                            <div class="list-botton">
+                                <a class="post-content" href="#" target="_blank">
+                                    <div class="title"><span>从设置密码看你的感情 楼下大波经典文字笑话</span></div>
+                                    <div class="data-reactid">
+                                        <div class="content">
+                                            <div class="desc">
                                 <span>两个女鬼阴间聊天问对方是怎么死的~~~
 A女：我是被冻死的！
 B女：我是心脏病突然发作而死的，因为我怀疑我先生有外遇而提早回家，看他自己一個人在看電視，不合常理
 A女：后來呢？
 B女:我直觉确定有个女人藏在我家裡，我找遍了全屋子，上至屋頂，下至地下室，看床底，搜衣柜，都翻遍了，最后累得心脏病突然发作死了
 A女：真太可惜了，你要打开冰箱看一看 咱俩都死不了了！</span>
-                                    </div>
+                                            </div>
 
-                                    <div class="image">
-                                        <img src="http://wx2.sinaimg.cn/mw690/c511d411gy1fhgvky3z1sj20hs0bugo2.jpg">
-                                    </div>
-                                </div>
-                                <div class="post-foot">
-                                      <div class="time">2017-7</div>
-                                    <div class="num">
-                                        <span>000评论</span>
-                                        <span>000赞</span>
-                                        <span>000收藏</span>
-                                    </div>
-                                </div>
+                                            <div class="image">
+                                                <img src="http://wx2.sinaimg.cn/mw690/c511d411gy1fhgvky3z1sj20hs0bugo2.jpg">
+                                            </div>
+                                        </div>
+                                        <div class="post-foot">
+                                            <div class="time">2017-7</div>
+                                            <div class="num">
+                                                <span>000评论</span>
+                                                <span>000赞</span>
+                                                <span>000收藏</span>
+                                            </div>
+                                        </div>
 
+
+                                    </div>
+                                </a></div>
+                        </li>
+                    </ul>
+                </div>
+                <!--关注动态面板-->
+                <div   id="like-cur">
+                    <ul  >
+                        <li class="post">
+                            <div class="post-user">
+                                <span><img src="images/userlogo.png" class="post-photo"></span>
 
                             </div>
-                        </a></div>
-                </li>
-        </ul>
+                            <div class="list-right">
+                                <div class="post-name">用户名2</div>
+                                <div class="post-bar" >趣点1</div>
+                            </div>
+                            <div class="list-botton">
+                                <a class="post-content" href="#" target="_blank">
+                                    <div class="title"><span>大波经典文字笑话</span></div>
+                                    <div class="data-reactid">
+                                        <div class="content">
+                                            <div class="desc">
+                                <span>
+A女：我是被冻死的！
+B女：我是心脏病突然发作而死的，因为我怀疑我先生有外遇而提早回家，看他自己一個人在看電視，不合常理
+A女：后來呢？
+B女:我直觉确定有个女人藏在我家裡，我找遍了全屋子，上至屋頂，下至地下室，看床底，搜衣柜，都翻遍了，最后累得心脏病突然发作死了
+A女：真太可惜了，你要打开冰箱看一看 咱俩都死不了了！</span>
+                                            </div>
+
+                                            <div class="image">
+                                                <img src="http://wx2.sinaimg.cn/mw690/c511d411gy1fhgvky3z1sj20hs0bugo2.jpg">
+                                            </div>
+                                        </div>
+                                        <div class="post-foot">
+                                            <div class="time">2017-8</div>
+                                            <div class="num">
+                                                <span>000评论</span>
+                                                <span>000赞</span>
+                                                <span>000收藏</span>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </a></div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
-    </div>
+
+        </div>
+
+
     <div id="body-right">
         <div class="user">
 

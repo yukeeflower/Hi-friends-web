@@ -197,6 +197,11 @@ body{
 }
 
 
+
+
+
+
+
 #body-center{
     width: 60%;
     float: left;
@@ -233,10 +238,23 @@ body{
 }
 
 
-#body-center .center-nav{
+#body-center  .center-nav{
     height: 60px;
     border-bottom: 1px solid #CBD2E4;
 
+}
+#body-center .center-nav li{
+    border: 1px solid #CBD2E4;
+    border-bottom: 0;
+    padding: 16px;
+    margin: 0;
+    font-size: 20px;
+    color:rgba(0,185,21,0.5)
+}
+
+#body-center .center-nav li:hover{
+    background: rgba(0,185,21,0.5);
+    color: #fff;
 }
 #body-center .post{
     border-bottom: 1px solid #CBD2E4 ;
@@ -246,12 +264,38 @@ body{
     float: left;
     font-weight: bold;
     margin: 20px;
+}
+
+
+/*#body-center .center-panel .panel{*/
+    /*opacity: 0;*/
+    /*filter: alpha(opacity=0);*/
+/*}*/
+
+
+/*#body-center #pannels  div{*/
+
+    /*opacity: 0;*/
+    /*filter: alpha(opacity=0);*/
+/*}*/
+#body-center .center-tab .tabcur{
+    background:rgba(0,185,21,0.8);
+    color: #fff;
+}
+
+
+
+#body-center .center-panel ul {
+    height: auto;
+    display: none;
+}
+
+#body-center .center-panel .cur{
+    display: block;
 
 }
-#body-center .hot{
-    font-size: 20px;
-    color: #3E5C9A;
-}
+
+
 
 #body-center .post-user span{
     float: left;
@@ -306,6 +350,13 @@ line-height: 30px;
     margin: 20px;
     color:#797979 ;
 }
+
+
+
+
+
+
+
 #body-right{
     width: 20%;
     float: left;
