@@ -4,140 +4,25 @@
     <meta charset="UTF-8">
     <title>hi,趣友网的首页</title>
     <link href="home.css" rel="stylesheet">
-    <!--<link href="login.css" rel="stylesheet">-->
-    <link href="home.js" rel="script">
     <script src="jquery-2.1.1/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="home.js"></script>
-    <!--<script type="text/javascript" src="login.js"></script>-->
-
-
-
-    <!--轮播js-->
-    <!--<script>-->
-        <!--var n = 0;-->
-        <!--$(document).ready(function(){-->
-            <!--count=$(".cont a").length;//显示区域的内容长度-->
-            <!--$(".item a").click(function(){-->
-                <!--$(this).addClass("seld").siblings().removeClass("seld");-->
-                <!--var _index=$(this).index();//分屏的数字索引-->
-                <!--$(".cont>a").eq(_index).fadeIn(300).siblings().fadeOut(300);-->
-            <!--});-->
-            <!--t = setInterval("showAuto()", 2000);//执行定义好的函数-->
-            <!--$(".box").hover(function(){clearInterval(t)}, function(){t = setInterval("showAuto()", 2000);});/*当鼠标划向图片时终止定时器，离开时再调用定时器*/-->
-        <!--})-->
-        <!--function showAuto()-->
-        <!--{-->
-            <!--n = n >=(count - 1)?0: ++n;-->
-            <!--$(".item a").eq(n).trigger('click');-->
-        <!--}-->
-        <!--下拉菜单-->
-
-
-<!--//      window.onclick=function topshow() {-->
-<!--//-->
-<!--//          var home = document.getElementById('myhome');-->
-<!--//            var list1 = document.getElementById('menu-list1');-->
-<!--//            var homeicon = document.getElementById('myhomeicon');-->
-<!--//-->
-<!--//-->
-<!--//-->
-<!--//            var userzx = document.getElementById('user');-->
-<!--//            var list2 = document.getElementById('menu-list2');-->
-<!--//            var usericon = document.getElementById('usericon');-->
-<!--//-->
-<!--//-->
-<!--//            var mail = document.getElementById('bar_email');-->
-<!--//            var maillist = document.getElementById('bar-list1');-->
-<!--//            var mailicon = document.getElementById('mail_icon');-->
-<!--//-->
-<!--//-->
-<!--//-->
-<!--//            home.onmouseover = homeshow;-->
-<!--//            home.onmouseout = homehide;-->
-<!--//-->
-<!--//            function homeshow() {-->
-<!--//                list1.style.display = 'block';-->
-<!--//                homeicon.style.color = '#95A6C2';-->
-<!--//-->
-<!--//            }-->
-<!--//-->
-<!--//-->
-<!--//          function homehide() {-->
-<!--//-->
-<!--//                list1.style.display = 'none';-->
-<!--//                homeicon.style.color = '#fff';-->
-<!--//            }-->
-<!--//-->
-<!--//            userzx.onmouseover = usershow;-->
-<!--//            userzx.onmouseout = userhide;-->
-<!--//-->
-<!--//            function usershow() {-->
-<!--//                list2.style.display = 'block';-->
-<!--//                usericon.style.color = '#95A6C2';-->
-<!--//-->
-<!--//            }-->
-<!--//-->
-<!--//            function userhide() {-->
-<!--//-->
-<!--//                list2.style.display = 'none';-->
-<!--//                usericon.style.color = '#fff';-->
-<!--//            }-->
-<!--//-->
-<!--//-->
-<!--//            mail.onmouseover = mailshow;-->
-<!--//            mail.onmouseout = mailhide;-->
-<!--//-->
-<!--//            function mailshow() {-->
-<!--//                maillist.style.display = 'block';-->
-<!--//                mailicon.src = 'images/email-2.png';-->
-<!--//            }-->
-<!--//-->
-<!--//            function mailhide() {-->
-<!--//                maillist.style.display = 'none';-->
-<!--//                mailicon.src = 'images/email.png';-->
-<!--//            }-->
-<!--//        }-->
-
-        <!--js切换-->
-<!--//       window.onload=function tabshow() {-->
-<!--//            var tabs = document.getElementsByClassName("center-tab")[0].getElementsByTagName("li");-->
-<!--//            var contents = document.getElementsByClassName("center-panel")[0].getElementsByTagName("ul");-->
-<!--//            //                alert(contents)-->
-<!--//            (function changetab() {-->
-<!--//                for (var i = 0; i < tabs.length; i++) {-->
-<!--//                    tabs[i].onclick = showTab;-->
-<!--//-->
-<!--//                }-->
-<!--//-->
-<!--//            })()-->
-<!--//            function showTab() {-->
-<!--//                for (var i = 0; i < tabs.length; i++) {-->
-<!--//                    if (tabs[i] === this) {-->
-<!--//                        tabs[i].className = 'tabcur';-->
-<!--//                        contents[i].className = 'cur';-->
-<!--//                    } else {-->
-<!--//                        //                            alert(contents[i]);-->
-<!--//-->
-<!--//                        tabs[i].className = '';-->
-<!--//                        contents[i].className = '';-->
-<!--//                    }-->
-<!--//                }-->
-<!--//-->
-<!--//            }-->
-<!--//        }-->
-
-
-
-
 
 </head>
 <body>
-<!--<div id="model-overlay">-->
-    <!--<div class="model-data">-->
+<!--登录界面-->
+    <div id="model-data">
+        <img src="images/close.png" onclick="login()" onmouseover="this.src='images/close-2.png'" onmouseout="this.src='images/close.png'">
+        <div>账号登录</div>
+        <p><input type="text" id="username" class="data"  maxlength="11" placeholder="请输入手机号"></p>
+        <p><input type="password" class="data" id="password" placeholder="请输入密码"></p>
+        <p><input type="button" value="登录" id="login-bt"
+                  onmouseover="this.style.background='rgba(0,185,21,0.8)';this.style.color='#fff'"
+                  onmouseout="this.style.background='#fff';this.style.color='#54A64B'"
+        ></p>
+    </div>
 
-        <!--<p><a href onclick="login()" >关闭</a></p>-->
-    <!--</div>-->
-<!--</div>-->
+<div id="model-overlay"></div>
+
 
 
     <div id="top"  >
@@ -192,38 +77,21 @@
 
 
             </li>
-            <li><a href="#" class="top_bar_login" onclick="login()"> 注册|登录</a></li>
+            <li><a href="#" class="top_bar_login" onclick="login()"> 登录</a></li>
+            <li><a href="zhuce.html" class="top_bar_login">注册</a></li>
         </ul>
 
 
 
     </div>
 
-
-
-<script>
-
-
-
-
-</script>
-
-
-<!--模态框-->
-<!--<script type="text/javascript">-->
-     <!--function login(){-->
-        <!--var e1 = document.getElementById('model-overlay');-->
-        <!--e1.style.display = (e1.style.display="block")?"block":"none"-->
-    <!--}-->
-<!--</script>-->
-
     <div id="body" >
         <div id="body-left">
-            <ul class="left-ul">
-                <li class="body-nav"><a>推荐</a></li>
-                <li class="body-nav"><a>趣点1</a></li>
-                <li class="body-nav"><a>趣点2</a></li>
-                <li class="body-nav"><a>自定义</a></li>
+            <ul class="left-ul" id="leftlist" >
+                <li class="body-nav" onclick="ok(this.id)" id="ok1"><a>推荐</a></li>
+                <li class="body-nav" onclick="ok(this.id)" id="ok2"><a>趣点1</a></li>
+                <li class="body-nav" onclick="ok(this.id)" id="ok3"><a>趣点2</a></li>
+                <li class="body-nav" onclick="ok(this.id)" id="free"><a>自定义</a></li>
 
             </ul>
         </div>
