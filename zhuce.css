@@ -1,0 +1,9 @@
+body,ul,p,h1,h2,h3,h4,h5,dl,dd,form,input,textarea,select{  padding: 0px;  margin: 0px;  font-family: Arial; }
+li{  list-style: none;  }
+image{border: none;}
+a{text-decoration: none;}
+a:hover{text-decoration: underline;}
+/*body{background: #EBEEF5  ; position:relative;width: 100%; min-height: 100%}*/
+html{
+    height: 100%;
+}

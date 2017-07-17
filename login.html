@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-2.1.1/jquery.min.js" type="text/javascript"></script>
+    <title>Title</title>
+    <style>
+        li{  list-style: none;  }
+        #tishi{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<ul>
+    <li><input id="name" type="text" placeholder="用户名"></li>
+    <li><input id="vitualname" type="text" placeholder="昵称"></li>
+    <li><input id="password1" type="password"></li>
+    <li><input id="password2" type="password"></li>
+    <li id="tishi">错误</li>
+    <li><input type="button" id="okbtn" value="ok" onclick="panduan()" ></li>
+
+</ul>
+<script>
+    function panduan() {
+        var p1 =$("#password1").val();
+        var p2=$("#password2").val();
+        if(p1==p2){
+            document.getElementById("tishi").style.display="";
+            fasong()
+
+        }
+        else {
+            document.getElementById("tishi").style.display="block";
+
+        }
+    }
+    
+    function fasong() {
+        var name=$("#name").val();
+        var vitualname=$("#vitualname").val();
+        var p1 =$("#password1").val();
+
+        $.ajax({
+            type: "POST",
+            url: "http://182.254.152.99:8080/squaredance/user/regist",
+            contentType: "application/json;charset=utf-8",
+            data: JSON.stringify({
+                "username": name,
+                "uservitualname":vitualname,
+                "password": p1}
+            ),
+            dataType : "json",
+            success:function chenggong(msg) {
+                if (msg.code == "S01") {
+
+                    alert(msg.message)
+//                    document.getElementById("top_log").innerHTML=msg.contents.uservitualname;
+//                    var e1 = document.getElementById('model-overlay');
+//                    var e2 = document.getElementById('model-data');
+//
+//                    e1.style.display = "";
+//                    e2.style.display = "";            // login();
+//                    $('#top_log').removeAttr('onclick');
+                }
+            },
+//            error:function error(msg) {
+//                alert(msg);
+//            }
+        });
+    }
+</script>
+</body>
+</html>

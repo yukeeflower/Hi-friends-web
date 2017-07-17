@@ -131,32 +131,68 @@ function tabshow() {
 //登录模态框
 function login() {
     var e1 = document.getElementById('model-overlay');
-    var e2 =document.getElementById('model-data');
-    document.body.style.overflow=(document.body.style.overflow=="")?"hidden":"";
+    var e2 = document.getElementById('model-data');
+    document.body.style.overflow = (document.body.style.overflow == "") ? "hidden" : "";
     e1.style.display = (e1.style.display == "block") ? "" : "block";
-    e2.style.display=( e2.style.display=="block")?"":"block";
+    e2.style.display = ( e2.style.display == "block") ? "" : "block";
 
 }
 
 
-
 //左边导航栏选中效果
 function ok(x) {
-    var a=document.getElementById('leftlist');
-    var b=a.getElementsByTagName('li');
+    var a = document.getElementById('leftlist');
+    var b = a.getElementsByTagName('li');
 
-    for(i=b.length;i--;){
-       if (b[i].id!=x){
-           b[i].style.background="rgba(190,200,221,1)";
-       }
-       else {
-           b[i].style.background="rgba(147,165,195,1)";
+    for (i = b.length; i--;) {
+        if (b[i].id != x) {
+            b[i].style.background = "rgba(190,200,221,1)";
+        }
+        else {
+            b[i].style.background = "rgba(147,165,195,1)";
 
-       }
+        }
 
     }
 
 
 }
 
+
+/**
+ * 登录方法
+ *
+ *
+ */
+
+function dologin() {
+    var username = $("#username").val();
+    var password = $("#password").val();
+    $.ajax({
+        type: "POST",
+        url: "http://182.254.152.99:8080/squaredance/user/login",
+        contentType: "application/json;charset=utf-8",
+        data: JSON.stringify({
+                "username": username,
+                "password": password}
+        ),
+        dataType : "json",
+        success:function logindata(msg) {
+        if (msg.code == "S01") {
+            document.getElementById("top_log").innerHTML=msg.contents.uservitualname;
+            var e1 = document.getElementById('model-overlay');
+            var e2 = document.getElementById('model-data');
+            e1.style.display = "";
+            e2.style.display = "";            // login();
+            $('#top_log').removeAttr('onclick');
+        }
+        else {
+            alert(msg.message);
+        }
+    },
+    error:function error(msg) {
+        alert(msg);
+    }
+    });
+}
 

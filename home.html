@@ -9,22 +9,24 @@
 
 </head>
 <body>
+
+
 <!--登录界面-->
     <div id="model-data">
         <img src="images/close.png" onclick="login()" onmouseover="this.src='images/close-2.png'" onmouseout="this.src='images/close.png'">
         <div>账号登录</div>
         <p><input type="text" id="username" class="data"  maxlength="11" placeholder="请输入手机号"></p>
         <p><input type="password" class="data" id="password" placeholder="请输入密码"></p>
-        <p><input type="button" value="登录" id="login-bt"
-                  onmouseover="this.style.background='rgba(0,185,21,0.8)';this.style.color='#fff'"
-                  onmouseout="this.style.background='#fff';this.style.color='#54A64B'"
+        <p><input type="button" value="登录" id="login-bt" onclick="dologin()"
+                  onmouseover="this.style.background='rgba(0,185,21,1)';"
+                  onmouseout="this.style.background='rgba(0,185,21,0.8)';"
         ></p>
     </div>
 
 <div id="model-overlay"></div>
 
 
-
+<!--首页-->
     <div id="top"  >
 
         <ul class="top_logo">
@@ -52,11 +54,11 @@
 
             </li>
             <li id="user" class="menu-title">
-                <a href="#" id="usericon" >用户中心</a>
+                <a href="center.html" id="usericon" >用户中心</a>
                 <ul class="menu-list" id="menu-list2">
-                    <li> 个人信息设置</li>
-                    <li> 账号安全设置</li>
-                    <li> 消息设置</li>
+                   <li> 个人信息设置</li>
+                   <li> 账号安全设置</li>
+                   <li> 消息设置</li>
                 </ul>
             </li>
         </ul>
@@ -77,14 +79,11 @@
 
 
             </li>
-            <li><a href="#" class="top_bar_login" onclick="login()"> 登录</a></li>
+            <li><a href="#" class="top_bar_login" onclick="login()" id="top_log"> 登录</a></li>
             <li><a href="zhuce.html" class="top_bar_login">注册</a></li>
         </ul>
-
-
-
     </div>
-
+<!--中间部分-->
     <div id="body" >
         <div id="body-left">
             <ul class="left-ul" id="leftlist" >

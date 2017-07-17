@@ -75,10 +75,10 @@ body{
     bottom: 20px;
     border-radius:5px;
     font-size: 15px;
-    border: 1px solid #54A64B;
-    color: #54A64B;
-    background: #fff;
-    /*background: rgba(0,185,21,0.5);*/
+    /*border: 1px solid #54A64B;*/
+    color: #fff;
+    /*background: #54A64B;*/
+    background: rgba(0,185,21,0.8);
 }
 
 
