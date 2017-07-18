@@ -3,7 +3,251 @@ li{  list-style: none;  }
 image{border: none;}
 a{text-decoration: none;}
 a:hover{text-decoration: underline;}
+img{ margin: 0px;padding: 0px;}
 /*body{background: #EBEEF5  ; position:relative;width: 100%; min-height: 100%}*/
 html{
     height: 100%;
+}
+body{
+    background:url("images/zhuce_bg_body.png") repeat-x;
+}
+#header{
+    /*border: 1px solid black ;*/
+    width: 900px;
+    height: 180px;
+    margin: 0 auto;
+    background: url("images/zhuce_bg_logo.png");
+
+}
+#header div{
+    text-align: center;
+    /*border: 1px solid black;*/
+    margin-top: 40px;
+}
+
+
+
+
+#content{
+    width: 900px;
+    height: 500px;
+    border: 1px solid #CBD2E4 ;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 5px;
+    /*text-align: center;*/
+
+}
+#content #nav{
+    height: 52px;
+    margin-left: 40px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    /*border: 1px solid black ;*/
+
+}
+#content #nav li{
+    float: left;
+    width: 120px;
+    height: 36px;
+    margin: 10px;
+    font-size: 25px;
+}
+#content #nav #nav1{
+    border-bottom: 3px solid #54A64B;
+
+}
+/*#content #nav  :hover{*/
+    /*!*background: blue;*!*/
+/*}*/
+
+
+
+
+#content #main #left{
+    width: 600px;
+    height: 400px;
+    float: left;
+    /*border: 1px solid black ;*/
+    background: #fff;
+    /*padding-top: 100px;*/
+    /*margin-left: 100px;*/
+}
+
+
+#content #main #left  .form_data{
+    /*vertical-align:middle;*/
+    margin-bottom: 10px;
+    width: 200px;
+    height: 30px;
+    /*margin-left: 100px;*/
+    border-radius: 5px;
+    border: 1px solid #CBD2E4;
+
+}
+
+#content #main #left #form1{
+    margin-top: 100px;
+    display: block;
+}
+#content #main #left #form2{
+    margin-top: 100px;
+    display: none;
+}
+#content #main #left label{
+    margin-left: 100px;
+    text-align: center;
+    display:inline-block;
+    width: 100px;
+    font-size: 15px;
+    height: 15px;
+
+}
+#content #main  img{
+    float: left;
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+#content #main #left #password2{
+    /*background:url("images/zhuce_right1.png") no-repeat scroll right center transparent;*/
+
+}
+#content #main #left #mail_password2{
+    /*background:url("images/zhuce_right1.png") no-repeat scroll right center transparent;*/
+}
+
+#content #main #left #p1{
+    /*background: blue;*/
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+}
+#content #main #left #p2{
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+#content #main #left #okbtn{
+    /*position: absolute;*/
+    /*margin: -21px 0 0 -100px;*/
+    width: 200px;
+    height: 42px;
+    background: #54A64B;
+    font-size: 15px;
+    color: #ffffff;
+    border: none;
+}
+#content #main #left #okbtn :hover{
+}
+#content #main #left #mail_okbtn{
+    width: 200px;
+    height: 42px;
+    background: #54A64B;
+    font-size: 15px;
+    color: #ffffff;
+    border: none;
+}
+#content #main #left #p2 :hover{
+    background:#5BAF14;
+}
+
+#content #main #right{
+    /*border: 1px solid black ;*/
+    /*background: red;*/
+    float: left;
+    width: 210px;
+    height: 280px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+#content #main #right a{
+    color: #0089D5;
+    font-size: 15px;
+    line-height: 30px;
+}
+
+#content #main #right #right-top{
+
+    border-bottom: 1px solid #CBD2E4 ;
+    font-size: 15px;
+
+
+}
+#content #main #right #right-bottom{
+    margin-top: 20px;
+    /*border: 1px solid black ;*/
+    /*text-align: right;*/
+
+}
+#content #main #right  #right-bottom a{
+    margin-left: 10px;
+    line-height: 30px;
+    /*font-size: 20px;*/
+}
+
+#content #main #right #right-bottom   img{
+    margin: 0;
+    padding: 0;
+
+}
+#content #main #right  #right-bottom div{
+    margin-bottom: 10px;
+    /*background: red;*/
+}
+#content #main #right  #right-bottom #a1{
+    float: left;
+    width: auto;
+    height: auto;
+    /*background:blue ;*/
+}
+#content #main #right  #right-bottom #a1 img{
+    margin: 0;
+    padding: 0;
+}
+#content #main #right  #right-bottom #d1{
+    /*background: green;*/
+    margin-left: 0;
+    padding: 0px;
+}
+#content #main #right  #right-bottom #a2{
+    float: left;
+    width: auto;
+    height: auto;
+    /*background:blue ;*/
+}
+/*#content #main #right  #right-bottom #a2 img{*/
+    /*margin: 0;*/
+    /*padding: 0;  */
+/*}*/
+#content #main #right  #right-bottom #d2{
+    /*background: green;*/
+    margin-left: 0;
+    padding: 0px;
+}
+
+#content #main #right  #right-bottom #a3{
+    float: left;
+    width: auto;
+    height: auto;
+    /*background:blue ;*/
+}
+#content #main #right  #right-bottom #d3{
+    /*background: green;*/
+    margin-left: 0;
+    padding: 0px;
+}
+
+
+
+
+#footer{
+    /*border: 1px solid black ;*/
+    width: 900px;
+    margin: 0 auto;
+    color: #6298CE;
+    font-size: 12px;
+
+
 }

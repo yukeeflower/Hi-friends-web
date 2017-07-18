@@ -28,6 +28,7 @@ function showAuto() {
 }
 
 
+
 window.onload = function () {
     topshow();
     tabshow();
@@ -185,6 +186,10 @@ function dologin() {
             e1.style.display = "";
             e2.style.display = "";            // login();
             $('#top_log').removeAttr('onclick');
+            $('#top_close').attr('href','home.html');
+            $("#top_close").text('退出');
+
+
         }
         else {
             alert(msg.message);
