@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面</title>
+    <style type="text/css">
+        body,ul,p,h1,h2,h3,h4,h5,dl,dd,form,input,textarea,select{  padding: 0px;  margin: 0px;  font-family: Arial; }
+        li{  list-style: none;  }
+        image{border: none;}
+        a{text-decoration: none;}
+        a:hover{text-decoration: underline;}
+
+        /*body{*/
+            /*display: flex;*/
+            /*flex-direction: column;*/
+            /*height: 100%;*/
+        /*}*/
+
+        .head{
+            flex: 0 0 auto;
+            /*z-index: 1;*/
+
+        }
+        .body{
+            /*flex: 1 0 auto;*/
+            border: 1px solid #000;
+            height: 1000px;
+            z-index: 0;
+
+        }
+        .foot{
+            /*flex: 0 0 auto;*/
+            z-index: 0;
+        }
+        /*iframe{*/
+            /*z-index: 10000;*/
+        /*}*/
+
+    </style>
+</head>
+<body>
+<div class="page">
+    <iframe frameboder="0" scrolling="no" width="100%" height="50px" src="head.html" class="head"></iframe>
+    <div class="body" > 页面内容</div>
+    <iframe frameboder="0" scrolling="no" width="100%" height="146px" src="foot.html" class="foot"></iframe>
+</div>
+</body>
+</html>

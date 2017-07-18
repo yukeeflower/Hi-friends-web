@@ -16,7 +16,6 @@
         <div id="nav">
             <ul class="nav-tab">
                 <li id="nav1" onclick="showTab1()">邮箱注册</li>
-                <!--<li id="nav-border"><img src="images/zhuce_nav_border.gif"></li>-->
                 <li  id="nav2" onclick="showTab2()">手机注册</li>
             </ul>
 
@@ -32,14 +31,17 @@
                     <p><label >邮箱</label>
                         <input id="mail_name" type="text" placeholder="请输入邮箱"    class="form_data"></p>
                     <p><label> 用户名</label>
+                        <input id="mail_userlname" type="text" placeholder="请创建用户名" class="form_data"></p>
+                    <p><label> 昵称</label>
                         <input id="mail_vitualname" type="text" placeholder="请创建昵称" class="form_data"></p>
+
                     <p><label> 密码</label>
                         <input id="mail_password1" type="password" placeholder="请设置密码" class="form_data"></p>
                     <p>
                         <label> 确认密码</label>
                         <input id="mail_password2" type="password" placeholder="请再次输入密码" class="form_data">
                     </p>
-                    <p id="p2"><input type="button" id="mail_okbtn" value="立即注册" onclick="panduan()" class="form_data" ></p>
+                    <p id="p2"><input type="button" id="mail_okbtn" value="立即注册" onclick="mail_fasong()" class="form_data" ></p>
 
                 </div>
 <script>
@@ -61,7 +63,7 @@
                         <label> 确认密码</label>
                          <input id="password2" type="password" placeholder="请再次输入密码" class="form_data">
                     </p>
-                    <p id="p1"><input type="button" id="okbtn" value="立即注册" onclick="panduan()" class="form_data" ></p>
+                    <p id="p1"><input type="button" id="okbtn" value="立即注册" onclick="fasong()" class="form_data" ></p>
 
                 </div>
 

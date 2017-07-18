@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,ul,p,h1,h2,h3,h4,h5,dl,dd,form,input,textarea,select{  padding: 0px;  margin: 0px;  font-family: Arial; }
+        li{  list-style: none;  }
+        image{border: none;}
+        a{text-decoration: none;}
+        a:hover{text-decoration: underline;}
+        #top {
+            /*width: auto;*/
+            height: 50px;
+            margin: 0;
+            background: #3E5C9A;
+            position: relative;
+            z-index: 1;
+
+            flex: 0 0 auto;
+
+        }
+
+        #top a:hover{
+            color:#95A6C2 ;
+        }
+
+
+
+        .top_logo li{
+            float: left;
+            line-height: 45px;
+        }
+        .top_logo  img{
+            width: 100px;
+            height: 40px;
+            margin-left: 105px;
+            margin-top: 3px;
+        }
+        #top_sb{
+            width: 325px;
+            height: 30px;
+            margin-left: 45px;
+        }
+
+
+
+        .top_menu{
+            float: left;
+        }
+        .top_menu ul ul {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: none;
+        }
+        .top_menu   a{
+            color: #fff;
+            font-size: 18px;
+            line-height: 48px;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding-right:20px;
+            padding-left: 20px;
+
+        }
+
+        .top_menu .menu-title{
+            float: left;
+            position: relative;
+
+
+
+        }
+
+        .top_menu .menu-title .menu-list{
+            width: 122px;
+            position: absolute;
+            left: 10px;
+            line-height: 50px;
+            font-size: 15px;
+            text-align: center;
+            background:rgba(147,165,195,0.5);
+
+            display: none;
+        }
+        .top_menu  .menu-title .menu-list li{
+            color: #3E5C9A;
+        }
+        .top_menu .menu-list li:hover{
+            background:rgba(147,165,195,0.8);
+        }
+        .top_menu  .menu-title a{
+            color: #ffffff;
+            margin-top: 30px;
+        }
+        .top_menu #home{  margin-left: 95px;}
+
+
+        .top_bar{
+            position: absolute;
+            right: 0;
+            top:0;
+            float: right;
+        }
+        .top_bar li{
+            float: left;
+            font-size: 13px;
+            line-height: 45px;
+            margin-left: 10px;
+            position: relative;
+        }
+
+        .top_bar .bar-list{
+            position: absolute;
+            left: -30px;
+            width: 100px;
+            font-size: 15px;
+            text-align: center;
+            line-height: 30px;
+            padding: 0px;
+            margin: 0px;
+            background:rgba(147,165,195,0.5);
+            display: none;
+            /*background: url("images/toplist-bg.png");*/
+
+
+        }
+        .top_bar .bar-list li{
+            width: 100px;
+            margin: 0px;
+            color: #3E5C9A;
+
+        }
+
+        .top_bar .bar-list li:hover{
+            background:rgba(147,165,195,0.8);
+
+        }
+
+
+
+        .top_bar img{width: 30px;height: 24px; margin-top: 10px;}
+        .top_bar a{color: #ffffff;margin-top: 30px;}
+        .top_bar .top_bar_login{margin-right: 20px;}
+
+
+
+    </style>
+
+
+    <script>
+       window.onload= function topshow() {
+            var home = document.getElementById('myhome');
+            var list1 = document.getElementById('menu-list1');
+            var homeicon = document.getElementById('myhomeicon');
+
+            var userzx = document.getElementById('user');
+            var list2 = document.getElementById('menu-list2');
+            var usericon = document.getElementById('usericon');
+
+
+            var mail = document.getElementById('bar_email');
+            var maillist = document.getElementById('bar-list1');
+            var mailicon = document.getElementById('mail_icon');
+
+
+            home.onmouseover = homeshow;
+            home.onmouseout = homehide;
+
+            function homeshow() {
+                list1.style.display = 'block';
+                homeicon.style.color = '#95A6C2';
+
+            }
+
+            function homehide() {
+
+                list1.style.display = 'none';
+                homeicon.style.color = '#fff';
+            }
+
+
+            userzx.onmouseover = usershow;
+            userzx.onmouseout = userhide;
+
+            function usershow() {
+                list2.style.display = 'block';
+                usericon.style.color = '#95A6C2';
+
+            }
+
+            function userhide() {
+
+                list2.style.display = 'none';
+                usericon.style.color = '#fff';
+            }
+
+
+            mail.onmouseover = mailshow;
+            mail.onmouseout = mailhide;
+
+            function mailshow() {
+                maillist.style.display = 'block';
+                mailicon.src = 'images/email-2.png';
+            }
+
+            function mailhide() {
+                maillist.style.display = 'none';
+                mailicon.src = 'images/email.png';
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div id="top"  >
+
+    <ul class="top_logo">
+        <li> <img src="images/logo2.png" id="logo">  </li>
+        <li>
+            <form id="top_select" method="get" action="#">
+                <input id="top_sb" name="top_sb" results="s" type="search" >
+            </form>
+        </li>
+
+
+    </ul>
+    <ul class="top_menu">
+        <li id="home"  class="menu-title">
+            <a href="#" >首页</a>
+        </li>
+        <li  class="menu-title" id="myhome">
+            <a href="#" id="myhomeicon" >个人主页</a>
+
+            <ul class="menu-list" id="menu-list1">
+                <li> 我的文章</li>
+                <li> 我的收藏</li>
+                <li> 我的好友</li>
+            </ul>
+
+        </li>
+        <li id="user" class="menu-title">
+            <a href="center.html" id="usericon" >用户中心</a>
+            <ul class="menu-list" id="menu-list2">
+                <li> 个人信息设置</li>
+                <li> 账号安全设置</li>
+                <li> 消息设置</li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="top_bar" >
+        <li id="bar_email">
+            <a href="#" >
+                <img id="mail_icon" src="images/email.png">
+
+            </a>
+
+            <ul class="bar-list" id="bar-list1">
+                <li id="barlist-message">我的消息</li>
+                <li>评论</li>
+                <li>赞</li>
+                <li>帮助</li>
+
+            </ul>
+
+
+        </li>
+        <li><a href="#" class="top_bar_login" onclick="login()" id="top_log"> 登录</a></li>
+        <li><a href="zhuce.html" class="top_bar_login" id="top_close" >注册</a></li>
+    </ul>
+</div>
+
+</body>
+</html>

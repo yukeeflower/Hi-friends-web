@@ -171,7 +171,7 @@ function dologin() {
     var password = $("#password").val();
     $.ajax({
         type: "POST",
-        url: "http://182.254.152.99:8080/squaredance/user/login",
+        url: "http://www.piaoxuehua.cn/hi-friends/user/login",
         contentType: "application/json;charset=utf-8",
         data: JSON.stringify({
                 "username": username,
@@ -180,7 +180,7 @@ function dologin() {
         dataType : "json",
         success:function logindata(msg) {
         if (msg.code == "S01") {
-            document.getElementById("top_log").innerHTML=msg.contents.uservitualname;
+            document.getElementById("top_log").innerHTML=msg.contents.nickname;
             var e1 = document.getElementById('model-overlay');
             var e2 = document.getElementById('model-data');
             e1.style.display = "";

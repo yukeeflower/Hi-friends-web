@@ -38,22 +38,23 @@ function showTab2() {
 }
 //邮箱密码判断
 
+$(document).ready(function(){
+    $("#mail_password2").blur(function(){
+        var phonenum1=$("#mail_password1").val();
+        var phonenum2=$("#mail_password2").val();
 
-function panduan() {
-    var l1 =$("#mail_password1").val();
-    var l2=$("#mail_password2").val();
 
-    if(l1==l2){
+        if(phonenum1==phonenum2){
+            document.getElementById("mail_password2").style.background= "url('images/zhuce_right1.png') no-repeat scroll right center transparent";
 
-        document.getElementById("mail_password2").style.background= "url('images/zhuce_right1.png') no-repeat scroll right center transparent";
 
-        fasong()
-    }
-    else {
-        document.getElementById("mail_password2").style.background="url('images/zhuce_erro1.png') no-repeat scroll right center transparent";
+        }
+        else {
+            document.getElementById("mail_password2").style.background="url('images/zhuce_erro1.png') no-repeat scroll right center transparent";
+        }
+    });
+});
 
-    }
-}
 //邮箱格式判断
 
 $(document).ready(function(){
@@ -77,8 +78,23 @@ function checkEmail(){
         return false;
     }
 }
-//手机密码判断
 
+//手机密码判断
+$(document).ready(function(){
+    $("#password2").blur(function(){
+        var phonenum1=$("#password1").val();
+        var phonenum2=$("#password2").val();
+
+        if(phonenum1==phonenum2){
+
+            document.getElementById("password2").style.background= "url('images/zhuce_right1.png') no-repeat scroll right center transparent";
+
+        }
+        else {
+            document.getElementById("password2").style.background="url('images/zhuce_erro1.png') no-repeat scroll right center transparent";
+        }
+    });
+});
 
 
 
@@ -90,7 +106,7 @@ $(document).ready(function(){
 
 
     });
-    $("input").blur(function(){
+    $("#name").blur(function(){
         var phonenum=$("#name").val();
         if(phonenum!=''){
             $("#num_button").css("background-color","#fff");
@@ -121,25 +137,30 @@ function onnum() {
 
 
 
-//注册成功
-function fasong() {
-    var name=$("#mail_name").val();
+//邮箱注册成功
+function mail_fasong() {
+    var mail=$("#mail_name").val();
+    var username=$("#mail_userlname").val();
     var vitualname=$("#mail_vitualname").val();
     var p1 =$("#mail_password1").val();
 
     $.ajax({
         type: "POST",
-        url: "http://182.254.152.99:8080/squaredance/user/regist",
+        url: "http://www.piaoxuehua.cn/hi-friends/user/regist",
         contentType: "application/json;charset=utf-8",
         data: JSON.stringify({
-            "username": name,
-            "uservitualname":vitualname,
-            "password": p1}
-        ),
+            "username": username,
+            "nickname":vitualname,
+            "password": p1,
+            "email":mail
+        }),
         dataType : "json",
         success:function chenggong(msg) {
             if (msg.code == "S01") {
 
+                alert(msg.message)
+            }
+            else {
                 alert(msg.message)
             }
         },
