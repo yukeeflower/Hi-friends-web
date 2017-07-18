@@ -94,6 +94,21 @@ body{
     margin-top: 100px;
     display: none;
 }
+#content #main #left #form2 #num{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #CBD2E4;
+}
+#content #main #left #form2 #num_button{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background: darkgray;
+    color: #fff;
+    border: 1px solid #CBD2E4;
+}
+
 #content #main #left label{
     margin-left: 100px;
     text-align: center;
@@ -150,6 +165,9 @@ body{
     border: none;
 }
 #content #main #left #p2 :hover{
+    background:#5BAF14;
+}
+#content #main #left #p1 :hover{
     background:#5BAF14;
 }
 

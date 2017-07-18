@@ -2,7 +2,13 @@
  * Created by piaoxuehua on 2017/7/17.
  */
 
+// window.onload=function () {
+//
+//     onnum();
+// }
+
 //标签切换
+
 function showTab1() {
     var a1=document.getElementById("nav1");
     var a2=document.getElementById("nav2");
@@ -30,7 +36,7 @@ function showTab2() {
 
 
 }
-//密码判断
+//邮箱密码判断
 
 
 function panduan() {
@@ -71,6 +77,50 @@ function checkEmail(){
         return false;
     }
 }
+//手机密码判断
+
+
+
+
+//手机验证码点击事件判断
+$(document).ready(function(){
+    $("#name").focus(function(){
+        $("#num_button").css("background-color","darkgray");
+        $("#num_button").css("color","#fff");
+
+
+    });
+    $("input").blur(function(){
+        var phonenum=$("#name").val();
+        if(phonenum!=''){
+            $("#num_button").css("background-color","#fff");
+            $("#num_button").css("color","#000");
+
+        }
+        else {
+            $("#num_button").css("background-color","darkgray");
+        }
+    });
+});
+
+function onnum() {
+    var phonenum=$("#name").val();
+    alert(phonenum);
+    if(phonenum!=''){
+        document.getElementById('num_button').style.background='#fff'
+    }
+    else {
+        document.getElementById('num_button').style.background='#000'
+    }
+
+
+
+
+}
+
+
+
+
 //注册成功
 function fasong() {
     var name=$("#mail_name").val();
