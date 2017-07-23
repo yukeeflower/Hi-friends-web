@@ -5,8 +5,52 @@
     <title>hi,趣友网的首页</title>
     <link href="home.css" rel="stylesheet">
     <script src="jquery-2.1.1/jquery.min.js" type="text/javascript"></script>
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="gt.js"></script>
     <script type="text/javascript" src="home.js"></script>
 
+
+
+    <style>
+        #xiugai-data{
+            position: absolute;
+            width: 300px;
+            height: 150px;
+            top:50%;
+            left: 50%;
+            margin:  -75px 0 0 -150px;
+            background: #fff;
+            border: 1px solid #CBD2E4;
+            z-index: 5;
+            text-align: center;
+            border-radius: 4px;
+            display: none;
+        }
+        #xiugai-data #xiugai-close{
+            width: 15px;
+            height: 15px;
+            position:relative;
+            left: 140px;
+        }
+        #xiugai-data #xiugai-name{
+            border: 1px solid #CBD2E4;
+            width: 150px;
+            height: 30px;
+            border-radius:3px;
+            margin-top: 30px;
+        }
+        #xiugai-data #xiugai-button{
+            width: 50px;
+            height: 30px;
+            border-radius:3px;
+            margin-top: 20px;
+            font-size: 15px;
+            color: #fff;
+            background: rgba(0,185,21,0.8);
+            border: 0px;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -14,16 +58,42 @@
 <!--登录界面-->
     <div id="model-data">
         <img src="images/close.png" onclick="login()" onmouseover="this.src='images/close-2.png'" onmouseout="this.src='images/close.png'">
-        <div>账号登录</div>
-        <p><input type="text" id="username" class="data" placeholder="请输入手机号"></p>
-        <p><input type="password" class="data" id="password" placeholder="请输入密码"></p>
-        <p><input type="button" value="登录" id="login-bt" onclick="dologin()"
-                  onmouseover="this.style.background='rgba(0,185,21,1)';"
-                  onmouseout="this.style.background='rgba(0,185,21,0.8)';"
-        ></p>
+        <div id="data_title">账号登录</div>
+        <form>
+            <p><input type="text" id="username" class="data" placeholder="请输入用户名"></p>
+            <p><input type="password" class="data" id="password" placeholder="请输入密码"></p>
+            <div>
+                <div id="captcha2">
+
+                    <p id="wait2" class="show">点击加载验证码......</p>
+                </div>
+                <br>
+                <input type="hidden" id="notice2" class="hide">请先完成验证</p>
+            </div>
+            <br>
+            <p>
+                <input class="btn" id="submit2" type="submit" value="登录" onmouseover="this.style.background='rgba(0,185,21,1)';"
+                       onmouseout="this.style.background='rgba(0,185,21,0.8)';">
+            </p>
+        </form>
+
+
+
     </div>
 
 <div id="model-overlay"></div>
+<!--修改提示框-->
+<div id="xiugai-data" >
+    <div>
+        <img src="images/close.png" id="xiugai-close" onclick="xiugai_close()" onmouseover="this.src='images/close-2.png'" onmouseout="this.src='images/close.png'">
+    </div>
+    <input type="text" placeholder="请自定义名称" id="xiugai-name" >
+    <br>
+    <input type="submit" id="xiugai-button"value="保存" onclick="xiugai_save()">
+</div>
+
+
+
 
 
 <!--首页-->
@@ -39,12 +109,12 @@
 
 
         </ul>
-        <ul class="top_menu">
+        <ul class="top_menu" onclick="tiaozhuan()">
             <li id="home"  class="menu-title">
                 <a href="#" >首页</a>
             </li>
             <li  class="menu-title" id="myhome">
-                <a href="#" id="myhomeicon" >个人主页</a>
+                <a id="myhomeicon" >个人主页</a>
 
                 <ul class="menu-list" id="menu-list1">
                     <li> 我的文章</li>
@@ -54,7 +124,7 @@
 
             </li>
             <li id="user" class="menu-title">
-                <a href="center.html" id="usericon" >用户中心</a>
+                <a id="usericon" >用户中心</a>
                 <ul class="menu-list" id="menu-list2">
                    <li> 个人信息设置</li>
                    <li> 账号安全设置</li>
@@ -84,18 +154,92 @@
         </ul>
     </div>
 <!--中间部分-->
-    <div id="body" >
-        <div id="body-left">
-            <ul class="left-ul" id="leftlist" >
-                <li class="body-nav" onclick="ok(this.id)" id="ok1"><a>推荐</a></li>
-                <li class="body-nav" onclick="ok(this.id)" id="ok2"><a>趣点1</a></li>
-                <li class="body-nav" onclick="ok(this.id)" id="ok3"><a>趣点2</a></li>
-                <li class="body-nav" onclick="ok(this.id)" id="free"><a>自定义</a></li>
 
-            </ul>
+    <div id="body" >
+
+        <div id="bodyleftlist">
+            <div class="body-left">
+                <ul class="left-ul" id="leftlist" >
+                    <li class="body-nav" onclick="ok(this.id)" id="ok1"><a>推荐</a>
+                    </li>
+                    <li class="body-nav" onclick="ok(this.id)" id="ok2"><a>趣点1</a>
+                        <div class="leftlist-btn" >
+                            <img src="images/delete.png" onclick="deleteline(this)" >
+                        </div>
+
+
+                    </li>
+                    <li class="body-nav" onclick="ok(this.id)" id="ok3"><a>趣点2</a>
+                        <div class="leftlist-btn" onclick="deleteline(this)">
+                            <img src="images/delete.png" >
+                        </div>
+
+                    </li>
+                    <li class="body-nav" onclick="ok(this.id)" id="free" ><a>自定义</a>
+                        <div class="leftlist-btn" onclick="addli()">
+                            <img src="images/add.png" >
+                        </div>
+                    </li>
+                    <!--<li class="body-nav" onclick="genggai()"><a>新的Li</a>-->
+                        <!--<div class="leftlist-btn" onclick="deleteline(this)">-->
+                            <!--<img src="images/delete.png" >-->
+                        <!--</div>-->
+
+                    <!--</li>-->
+
+                </ul>
+                <div id="leftclose">让趣点现身吧~</div>
+
+            </div>
         </div>
+        <!--弹框提示-->
+        <script>
+
+        </script>
+
+
+
+
+        <!--点击打开弹框-->
+<script>
+    function genggai() {
+//        alert(0)
+        var e1 = document.getElementById('model-overlay');
+        var e2 = document.getElementById('xiugai-data');
+        document.body.style.overflow = (document.body.style.overflow == "") ? "hidden" : "";
+        e1.style.display = (e1.style.display == "block") ? "" : "block";
+        e2.style.display = ( e2.style.display == "block") ? "" : "block";
+    }
+</script>
+        <!--点击关闭弹框-->
+        <script>
+            function xiugai_close() {
+                var e1 = document.getElementById('model-overlay');
+                var e2 = document.getElementById('xiugai-data');
+                e1.style.display =""
+                e2.style.display =""}
+        </script>
+
+
+
+<!--自定义点击事件生成Li-->
+<script>
+    function addli() {
+            $("#free").prepend("<li class='body-nav' ><a id='adda'>新的li</a> <div class='leftlist-btn' onclick='deleteline(this)'> <img src='images/delete.png'> </div></li>");
+        genggai();
+    }
+    function xiugai_save() {
+       var v1= $("#xiugai-name").val();
+       document.getElementById("adda").innerHTML=v1;
+        xiugai_close();
+
+
+
+    }
+</script>
         <div id="body-center">
             <!--轮播模块-->
+
             <div class="box">
                 <div class="cont">
                     <a><img src="images/page.png" /></a>
@@ -110,14 +254,11 @@
                     <a>·</a>
                 </div>
             </div>
-            <div class="center-tab" >
-
-
-
+            <div class="center-tab" id="center-content" >
                 <!--tab切换-->
 
-
                 <!--中间标题栏-->
+
 
                 <div class="center-nav" id="centertitle">
                     <ul class="center-tab">
@@ -255,6 +396,7 @@ A女：真太可惜了，你要打开冰箱看一看 咱俩都死不了了！</s
         </div>
 
     </div>
+
     <footer>
 
 
@@ -280,10 +422,6 @@ A女：真太可惜了，你要打开冰箱看一看 咱俩都死不了了！</s
                 <li>自助服务</li>
             </ul>
         </div>
-
-
-
-
     </footer>
 
 </body>

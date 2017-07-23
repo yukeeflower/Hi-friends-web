@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #div1{width:800px; height:800px; background:#000; position:relative;left:50%; margin-left:-400px;}
+        #div2{width:30px; height:200px; background:#666; color:#fff;text-align:center; padding-top:50px; position:absolute; right:0; top:40%; cursor:pointer;}
+        #div3{width:80px; height:200px; background:#69F; color:#909;text-align:center; padding-top:50px; position:absolute; right:-80px; top:40%;}
+    </style>
+</head>
+<body>
+<div id="div1">
+    <div id="div2">点击有惊喜</div>
+    <div id="div3">啦啦啦啦啦啦我就是惊喜！</div>
+</div>
+<script src="myjs/myjs.js"></script>
+<script>
+    var click=true;
+    document.getElementById('div2').onclick =function(){
+        if(click==true){
+            doMove('div2','right',10, parseInt(getstyle(getid('div3'),'width')));
+            doMove('div3','right',10,0);
+            click=false;
+        }else{
+            doMove('div2','right',10,0);
+            doMove('div3','right',10,-parseInt(getstyle(getid('div3'),'width')));
+            click=true;
+        }
+    }
+    function doMove(id,derection,speed,subjectPosition){
+        speed= parseInt(getstyle(getid(id),derection))> subjectPosition? -speed : speed;
+        clearInterval(getid(id).timer);
+        document.getElementById(id).timer=setInterval(function(){
+            var nowPosition =parseInt(getstyle(getid(id),derection));
+            var thisPosition=nowPosition+speed;
+            if(thisPosition>=subjectPosition&&speed>0||thisPosition<=subjectPosition&&speed<0){
+                thisPosition=subjectPosition;
+                clearInterval(getid(id).timer);
+            }
+            getid(id).style[derection]=thisPosition+'px';
+        },30)
+    }
+</script>
+</body>
+
+</html>

@@ -144,9 +144,10 @@ function mail_fasong() {
     var vitualname=$("#mail_vitualname").val();
     var p1 =$("#mail_password1").val();
 
+
     $.ajax({
         type: "POST",
-        url: "http://www.piaoxuehua.cn/hi-friends/user/regist",
+        url: "http://115.159.36.176/hi-friends/user/regist",
         contentType: "application/json;charset=utf-8",
         data: JSON.stringify({
             "username": username,
@@ -155,7 +156,8 @@ function mail_fasong() {
             "email":mail
         }),
         dataType : "json",
-        success:function chenggong(msg) {
+        success:
+            function chenggong(msg) {
             if (msg.code == "S01") {
 
                 alert(msg.message)

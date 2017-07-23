@@ -3,19 +3,18 @@ li{  list-style: none;  }
 image{border: none;}
 a{text-decoration: none;}
 a:hover{text-decoration: underline;}
-/*body{background: #EBEEF5  ; position:relative;width: 100%; min-height: 100%}*/
 html{
     height: 100%;
+    background: #CBD2E4;
 }
 
 body{
     display: flex;
     flex-direction: column;
     height: 100%;
-    background: #EBEEF5  ;
+    background:url("images/body_bg3.png") repeat-x;
+
 }
-
-
 
 
 #model-overlay{
@@ -23,7 +22,7 @@ body{
     position: absolute;
     top: 0px;
     width:100%;
-    height: 100%;
+    height: 100px;
     background:gray;
     opacity: 0.5;
     z-index: 3;
@@ -31,10 +30,10 @@ body{
 #model-data{
     position: absolute;
     width: 600px;
-    height: 400px;
+    height: 460px;
     top: 50%;
     left: 50%;
-    margin:  -200px 0 0 -300px;
+    margin:  -230px 0 0 -300px;
     display: none;
     background: #fff;
     text-align: center;
@@ -51,7 +50,7 @@ body{
     height: 15px;
 }
 
-#model-data div{
+#model-data #data_title{
     margin-left: 197px;
     margin-top: 73px;
     width: 185px;
@@ -66,25 +65,24 @@ body{
     margin-top: 30px;
     border-radius:5px;
 }
-#model-data #login-bt{
+
+#model-data #captcha2{
+    width: 200px;
+    height: 35px;
+    margin-top: 40px;
+    margin-left: 170px;
+}
+#model-data #submit2{
     position: relative;
-    top: 40px;
     width: 260px;
     height: 40px;
     margin: 20px;
     bottom: 20px;
     border-radius:5px;
     font-size: 15px;
-    /*border: 1px solid #54A64B;*/
     color: #fff;
-    /*background: #54A64B;*/
     background: rgba(0,185,21,0.8);
 }
-
-
-
-
-
 
 
 #top {
@@ -200,9 +198,6 @@ body{
     margin: 0px;
     background:rgba(147,165,195,0.5);
     display: none;
-    /*background: url("images/toplist-bg.png");*/
-
-
 }
 .top_bar .bar-list li{
     width: 100px;
@@ -213,81 +208,30 @@ body{
 
 .top_bar .bar-list li:hover{
     background:rgba(147,165,195,0.8);
-
 }
-
-
 
 .top_bar img{width: 30px;height: 24px; margin-top: 10px;}
 .top_bar a{color: #ffffff;margin-top: 30px;}
 .top_bar .top_bar_login{margin-right: 20px;}
 
-
-
-
-
-
-
-
-
-
 #body{
-    /*width: 80%;*/
-    /*margin-left: 10%;*/
-    /*margin-top: 2%;*/
-    border-top:  1px solid #CBD2E4;
+    width: 100%;
     padding-bottom: 50px;
     position: relative;
     z-index: 0;
-
     flex: 1 0 auto;
-
-}
-#body-left{
-    /*width: 30%;*/
-    float: left;
-    border: 1px solid #CBD2E4;
-    border-top: none;
-    border-right: none;
-    text-align: center;
-}
-#body-left .left-ul {
-    float: left;
-    /*border: 1px solid #CBD2E4;*/
-    border-top: none;
-    border-bottom: none;
-    width: 200px;
-    margin-top: 200px;
-    background: rgba(147,165,195,0.5);
-
-
-}
-#body-left .left-ul li:hover{
-    background: rgba(147,165,195,1);
-}
-#body-left .body-nav{
-    font-size: 15px;
-    line-height: 50px;
-    border-top: 1px solid #CBD2E4;
-
+    background: url("images/zhuce_bg_logo.png") repeat-x;
 }
 
-
-
-
-
-
-
-#body-center{
-    width: 60%;
-    float: left;
-    border-right: 1px solid #CBD2E4;
-    border-left: 1px solid #CBD2E4;}
-
-
-#body-center .box{position:relative;width:600px;margin:10px auto;}
-#body-center .cont{height:300px;overflow:hidden;}
-#body-center .box .item{
+#body .box{
+    position:relative;
+    width:900px;
+    height: 400px;
+    margin:10px auto;
+}
+#body .cont{
+    height:400px;overflow:hidden;}
+#body .box .item{
     background:rgba(147,165,195,0.5);
     font-size:70px;
     position:absolute;
@@ -298,22 +242,77 @@ body{
     line-height:60px;
     height:60px;
 }
-#body-center .item a{
+#body .item a{
     margin-right:10px;
     cursor:pointer;
     color:#fff;
     text-shadow:0 0 3px
     rgba(147,165,195,0.8);}
-#body-center a.seld {color:#5BAF14;}
-#body-center a.hide {display:none;}
+#body a.seld {color:#5BAF14;}
+#body a.hide {display:none;}
 
+.body-left{
+    float: left;
+    border: 1px solid #CBD2E4;
+    border-top: none;
+    border-right: none;
+    text-align: center;
+    width: 250px;
+    height: 100%;
+    margin-bottom: 146px;
+    margin-top: 320px;
+}
+.body-left #leftlist {
+    float: left;
+    border-top: none;
+    border-bottom: none;
+    width: 180px;
+    background: rgba(147,165,195,0.5);
+}
+.body-left #leftclose{
+    float: left;
+    position: relative;
+    width: 20px;
+    left: 0px;
+    top: 0;
+    background: rgba(147,165,195,0.5);
+    color: #000;
+    font-size: 15px;
+}
+
+.body-left #leftlist .leftlist-btn{
+    width: 80px;
+    background: rgba(41,27,70,0.8);
+    float: right;
+    margin-right: 5px;
+    /*display: none;*/
+}
+.body-left #leftlist img{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+.body-left #leftlist li:hover{
+    background: rgba(147,165,195,1);
+
+}
+.body-left .body-nav{
+    font-size: 15px;
+    line-height: 50px;
+    border-top: 1px solid #CBD2E4;
+
+}
+#body-center{
+    width: 900px;
+    float: left;
+
+    margin-left: 20px;
+    margin-right: 20px;
+}
 #body-center .center-play{
     height: 60px;
     width: 200px;
-
 }
-
-
 #body-center  .center-nav{
     height: 60px;
     border-bottom: 1px solid #CBD2E4;
@@ -343,17 +342,22 @@ body{
 }
 
 
-/*#body-center .center-panel .panel{*/
-    /*opacity: 0;*/
-    /*filter: alpha(opacity=0);*/
-/*}*/
 
 
-/*#body-center #pannels  div{*/
 
-    /*opacity: 0;*/
-    /*filter: alpha(opacity=0);*/
-/*}*/
+#body-center {
+    border-left: 1px solid #95A6C2;
+    border-right: 1px solid #95A6C2;
+}
+
+#body-center .center-nav{
+    border-bottom: 1px solid #95A6C2;
+
+}
+#body-center .center-tab{
+    margin-top: 10px;
+}
+
 #body-center .center-tab .tabcur{
     background:rgba(0,185,21,0.8);
     color: #fff;
@@ -434,20 +438,16 @@ line-height: 30px;
 
 
 #body-right{
-    width: 20%;
+    width: 200px;
     float: left;
-    border-right: 1px solid #CBD2E4;
-    border-bottom: 1px solid #CBD2E4;
+    margin-left: 40px;
 }
 #body-right .user{
 
     font-size: 20px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 100px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #CBD2E4;
-
-
 }
 #body-right .like span{
     font-size: 15px;
@@ -457,6 +457,9 @@ line-height: 30px;
 
 }
 #body-right .paihang{
+    margin-top: 100px;
+    border-top: 1px solid #95A6C2;
+
     margin-left: 10px;
 }
 #body-right .paihang div{
@@ -470,15 +473,7 @@ line-height: 30px;
 }
 footer{
     font-size: 15px;
-    /*margin-top: 10px;*/
-    /*height: 100px;*/
-    /*width: 100%;*/
-    /*position: absolute;*/
-    /*bottom: 0;*/
-    /*left: 0;*/
-
     flex: 0 0 auto;
-
     background:rgba(147,165,195,0.5);
 }
 

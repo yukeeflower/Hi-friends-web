@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> new document </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+    <script type="text/javascript">
+        //鼠标经过函数
+        function moveevent1(t){
+            t.style.backgroundColor="#f2f2f2";
+        }
+        //鼠标离开函数
+        function moveevent2(t){
+            t.style.backgroundColor="#fff";
+        }
+
+        // 编写一个函数，供添加按钮调用，动态在表格的最后一行添加子节点，这里并没有传参；
+        function addelement(){
+            var newnode=document.createElement("tr");
+            newnode.setAttribute("onmouseover","moveevent1(this)");
+            newnode.setAttribute("onmouseout","moveevent2(this)");
+            newnode.innerHTML="<td>xh001</td><td>王小明</td><td><a href='javascript:;' onclick='deleteline(this)' >删除</a></td>";
+            var parentnode=document.getElementById("table").childNodes[1];
+            parentnode.appendChild(newnode);
+            //       alert(parentnode.nodeName);
+        }
+
+
+        // 创建删除函数，table下面还有一个tbody(隐藏的)
+        function deleteline(c){
+            c.parentNode.parentNode.parentNode.removeChild(c.parentNode.parentNode);
+        }
+
+    </script>
+</head>
+<body>
+<table border="1" width="50%" id="table">
+    <tr>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>操作</th>
+    </tr>
+
+    <tr onmouseout="moveevent2(this)" onmouseover="moveevent1(this)" >
+        <td>xh001</td>
+        <td>王小明</td>
+        <td><a href="javascript:;" onclick="deleteline(this)" >删除</a></td>   <!--在删除按钮上添加点击事件  -->
+    </tr>
+
+    <tr onmouseover="moveevent1(this)" onmouseout="moveevent2(this)">
+        <td>xh002</td>
+        <td>刘小芳</td>
+        <td><a href="javascript:;" onclick="deleteline(this)" >删除</a></td>   <!--在删除按钮上添加点击事件  -->
+    </tr>
+
+</table>
+<input type="button" value="添加一行" onclick="addelement()" />   <!--在添加按钮上添加点击事件  -->
+</body>
+</html>

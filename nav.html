@@ -32,16 +32,33 @@
             /*flex: 0 0 auto;*/
             z-index: 0;
         }
+
         /*iframe{*/
             /*z-index: 10000;*/
         /*}*/
+        #image{
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        #neirong{
+            position: absolute;
+            left: 20px;
+            top: 50px;
+            z-index: 1;
+
+        }
 
     </style>
 </head>
 <body>
 <div class="page">
     <iframe frameboder="0" scrolling="no" width="100%" height="50px" src="head.html" class="head"></iframe>
-    <div class="body" > 页面内容</div>
+    <div class="body" >
+        <img  id="image" src="images/page.png">
+
+
+        <a id="neirong">页面内容</a></div>
     <iframe frameboder="0" scrolling="no" width="100%" height="146px" src="foot.html" class="foot"></iframe>
 </div>
 </body>
