@@ -319,3 +319,40 @@ $.ajax({
         c.parentNode.parentNode.removeChild(c.parentNode);
     }
 
+
+<!--弹框提示-->
+
+<!--点击打开弹框-->
+
+function genggai() {
+//        alert(0)
+    var e1 = document.getElementById('model-overlay');
+    var e2 = document.getElementById('xiugai-data');
+    document.body.style.overflow = (document.body.style.overflow == "") ? "hidden" : "";
+    e1.style.display = (e1.style.display == "block") ? "" : "block";
+    e2.style.display = ( e2.style.display == "block") ? "" : "block";
+}
+<!--点击关闭弹框-->
+function xiugai_close() {
+    var e1 = document.getElementById('model-overlay');
+    var e2 = document.getElementById('xiugai-data');
+    e1.style.display =""
+    e2.style.display =""}
+
+
+
+
+<!--自定义点击事件生成Li-->
+function addli() {
+    $("#free").prepend("<li class='body-nav' ><a id='adda'>新的li</a> <div class='leftlist-btn' onclick='deleteline(this)'> <img src='images/delete.png'> </div></li>");
+    genggai();
+}
+function xiugai_save() {
+    var v1= $("#xiugai-name").val();
+    document.getElementById("adda").innerHTML=v1;
+    xiugai_close();
+
+
+
+}
+

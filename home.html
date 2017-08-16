@@ -8,49 +8,6 @@
     <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
     <script src="gt.js"></script>
     <script type="text/javascript" src="home.js"></script>
-
-
-
-    <style>
-        #xiugai-data{
-            position: absolute;
-            width: 300px;
-            height: 150px;
-            top:50%;
-            left: 50%;
-            margin:  -75px 0 0 -150px;
-            background: #fff;
-            border: 1px solid #CBD2E4;
-            z-index: 5;
-            text-align: center;
-            border-radius: 4px;
-            display: none;
-        }
-        #xiugai-data #xiugai-close{
-            width: 15px;
-            height: 15px;
-            position:relative;
-            left: 140px;
-        }
-        #xiugai-data #xiugai-name{
-            border: 1px solid #CBD2E4;
-            width: 150px;
-            height: 30px;
-            border-radius:3px;
-            margin-top: 30px;
-        }
-        #xiugai-data #xiugai-button{
-            width: 50px;
-            height: 30px;
-            border-radius:3px;
-            margin-top: 20px;
-            font-size: 15px;
-            color: #fff;
-            background: rgba(0,185,21,0.8);
-            border: 0px;
-        }
-
-    </style>
 </head>
 <body>
 
@@ -91,11 +48,6 @@
     <br>
     <input type="submit" id="xiugai-button"value="保存" onclick="xiugai_save()">
 </div>
-
-
-
-
-
 <!--首页-->
     <div id="top"  >
 
@@ -121,10 +73,9 @@
                     <li> 我的收藏</li>
                     <li> 我的好友</li>
                 </ul>
-
             </li>
             <li id="user" class="menu-title">
-                <a id="usericon" >用户中心</a>
+                <a id="usericon" href="center.html" >用户中心</a>
                 <ul class="menu-list" id="menu-list2">
                    <li> 个人信息设置</li>
                    <li> 账号安全设置</li>
@@ -160,8 +111,15 @@
         <div id="bodyleftlist">
             <div class="body-left">
                 <ul class="left-ul" id="leftlist" >
-                    <li class="body-nav" onclick="ok(this.id)" id="ok1"><a>推荐</a>
+                    <li class="body-nav" onclick="ok(this.id)" id="ok1"><a  id="aaa" onclick="aa()">推荐</a>
                     </li>
+                    <!--<script>-->
+                        <!--function aa() {-->
+                           <!--var a= document.getElementById("aaa").innerHTML;-->
+                            <!--alert(a)-->
+
+                        <!--}-->
+                    <!--</script>-->
                     <li class="body-nav" onclick="ok(this.id)" id="ok2"><a>趣点1</a>
                         <div class="leftlist-btn" >
                             <img src="images/delete.png" onclick="deleteline(this)" >
@@ -192,51 +150,7 @@
 
             </div>
         </div>
-        <!--弹框提示-->
-        <script>
 
-        </script>
-
-
-
-
-        <!--点击打开弹框-->
-<script>
-    function genggai() {
-//        alert(0)
-        var e1 = document.getElementById('model-overlay');
-        var e2 = document.getElementById('xiugai-data');
-        document.body.style.overflow = (document.body.style.overflow == "") ? "hidden" : "";
-        e1.style.display = (e1.style.display == "block") ? "" : "block";
-        e2.style.display = ( e2.style.display == "block") ? "" : "block";
-    }
-</script>
-        <!--点击关闭弹框-->
-        <script>
-            function xiugai_close() {
-                var e1 = document.getElementById('model-overlay');
-                var e2 = document.getElementById('xiugai-data');
-                e1.style.display =""
-                e2.style.display =""}
-        </script>
-
-
-
-<!--自定义点击事件生成Li-->
-<script>
-    function addli() {
-            $("#free").prepend("<li class='body-nav' ><a id='adda'>新的li</a> <div class='leftlist-btn' onclick='deleteline(this)'> <img src='images/delete.png'> </div></li>");
-        genggai();
-    }
-    function xiugai_save() {
-       var v1= $("#xiugai-name").val();
-       document.getElementById("adda").innerHTML=v1;
-        xiugai_close();
-
-
-
-    }
-</script>
         <div id="body-center">
             <!--轮播模块-->
 
@@ -258,8 +172,6 @@
                 <!--tab切换-->
 
                 <!--中间标题栏-->
-
-
                 <div class="center-nav" id="centertitle">
                     <ul class="center-tab">
                         <li class="tabcur" >热门话题</li>
@@ -282,7 +194,7 @@
                                     <div class="post-bar" >趣点1</div>
                                 </div>
                                 <div class="list-botton">
-                                    <a class="post-content" href="#" target="_blank">
+                                    <a class="post-content" href="xiangqing.html" target="_blank">
                                         <div class="title"><span>从设置密码看你的感情 楼下大波经典文字笑话</span></div>
                                         <div class="data-reactid">
                                             <div class="content">
@@ -327,7 +239,7 @@ A女：真太可惜了，你要打开冰箱看一看 咱俩都死不了了！</s
                                     <div class="post-bar" >趣点1</div>
                                 </div>
                                 <div class="list-botton">
-                                    <a class="post-content" href="#" target="_blank">
+                                    <a class="post-content" href="xiangqing.html" target="_blank">
                                         <div class="title"><span>大波经典文字笑话</span></div>
                                         <div class="data-reactid">
                                             <div class="content">
