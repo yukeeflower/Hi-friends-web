@@ -13,328 +13,345 @@
 
 
 <!--登录界面-->
-    <div id="model-data">
-        <img src="images/close.png" onclick="login()" onmouseover="this.src='images/close-2.png'" onmouseout="this.src='images/close.png'">
-        <div id="data_title">账号登录</div>
-        <form>
-            <p><input type="text" id="username" class="data" placeholder="请输入用户名"></p>
-            <p><input type="password" class="data" id="password" placeholder="请输入密码"></p>
-            <div>
-                <div id="captcha2">
+<div id="model-data">
+    <img src="images/close.png" onclick="login()" onmouseover="this.src='images/close-2.png'"
+         onmouseout="this.src='images/close.png'">
+    <div id="data_title">账号登录</div>
+    <form>
+        <p><input type="text" id="username" class="data" placeholder="请输入用户名"></p>
+        <p><input type="password" class="data" id="password" placeholder="请输入密码"></p>
+        <div>
+            <div id="captcha2">
 
-                    <p id="wait2" class="show">点击加载验证码......</p>
-                </div>
-                <br>
-                <input type="hidden" id="notice2" class="hide">请先完成验证</p>
+                <p id="wait2" class="show">点击加载验证码......</p>
             </div>
             <br>
-            <p>
-                <input class="btn" id="submit2" type="submit" value="登录" onmouseover="this.style.background='rgba(0,185,21,1)';"
-                       onmouseout="this.style.background='rgba(0,185,21,0.8)';">
-            </p>
-        </form>
+            <input type="hidden" id="notice2" class="hide">请先完成验证</p>
+        </div>
+        <br>
+        <p>
+            <input class="btn" id="submit2" type="submit" value="登录"
+                   onmouseover="this.style.background='rgba(0,185,21,1)';"
+                   onmouseout="this.style.background='rgba(0,185,21,0.8)';">
+        </p>
+    </form>
 
 
-
-    </div>
+</div>
 
 <div id="model-overlay"></div>
 <!--修改提示框-->
-<div id="xiugai-data" >
+<div id="xiugai-data">
     <div>
-        <img src="images/close.png" id="xiugai-close" onclick="xiugai_close()" onmouseover="this.src='images/close-2.png'" onmouseout="this.src='images/close.png'">
+        <img src="images/close.png" id="xiugai-close" onclick="xiugai_close()"
+             onmouseover="this.src='images/close-2.png'" onmouseout="this.src='images/close.png'">
     </div>
-    <input type="text" placeholder="请自定义名称" id="xiugai-name" >
+    <input type="text" placeholder="请自定义名称" id="xiugai-name">
     <br>
-    <input type="submit" id="xiugai-button"value="保存" onclick="xiugai_save()">
+    <input type="submit" id="xiugai-button" value="保存" onclick="xiugai_save()">
 </div>
 <!--首页-->
-    <div id="top"  >
+<div id="top">
 
-        <ul class="top_logo">
-            <li> <img src="images/logo2.png" id="logo">  </li>
-            <li>
-                <form id="top_select" method="get" action="#">
-                    <input id="top_sb" name="top_sb" results="s" type="search" >
-                </form>
-            </li>
+    <ul class="top_logo">
+        <li><img src="images/logo2.png" id="logo"></li>
+        <li>
+            <form id="top_select" method="get" action="#" onkeydown="keydown(event)">
+                <input id="top_sb" name="top_sb" results="s" type="search">
+            </form>
+            <script>
+                function keydown(e) {
+                    e = window.event || e;
+                    if (e.keyCode === 13) {
+                        window.open('select.html');
 
+                    }
+                }
+            </script>
 
-        </ul>
-        <ul class="top_menu" onclick="tiaozhuan()">
-            <li id="home"  class="menu-title">
-                <a href="#" >首页</a>
-            </li>
-            <li  class="menu-title" id="myhome">
-                <a id="myhomeicon" >个人主页</a>
-
-                <ul class="menu-list" id="menu-list1">
-                    <li> 我的文章</li>
-                    <li> 我的收藏</li>
-                    <li> 我的好友</li>
-                </ul>
-            </li>
-            <li id="user" class="menu-title">
-                <a id="usericon" href="center.html" >用户中心</a>
-                <ul class="menu-list" id="menu-list2">
-                   <li> 个人信息设置</li>
-                   <li> 账号安全设置</li>
-                   <li> 消息设置</li>
-                </ul>
-            </li>
-        </ul>
-        <ul class="top_bar" >
-            <li id="bar_email">
-                <a href="#" >
-                    <img id="mail_icon" src="images/email.png">
-
-                </a>
-
-                <ul class="bar-list" id="bar-list1">
-                    <li id="barlist-message">我的消息</li>
-                    <li>评论</li>
-                    <li>赞</li>
-                    <li>帮助</li>
-
-                </ul>
+        </li>
 
 
-            </li>
-            <li><a href="#" class="top_bar_login" onclick="login()" id="top_log"> 登录</a></li>
-            <li><a href="zhuce.html" class="top_bar_login" id="top_close" >注册</a></li>
-        </ul>
-    </div>
+    </ul>
+    <ul class="top_menu" onclick="tiaozhuan()">
+        <li id="home" class="menu-title">
+            <a href="#">首页</a>
+        </li>
+        <li class="menu-title" id="myhome">
+            <a id="myhomeicon">个人主页</a>
+
+            <ul class="menu-list" id="menu-list1">
+                <li> 我的文章</li>
+                <li> 我的收藏</li>
+                <li> 我的好友</li>
+            </ul>
+        </li>
+        <li id="user" class="menu-title">
+            <a id="usericon" href="center.html">用户中心</a>
+            <ul class="menu-list" id="menu-list2">
+                <li> 个人信息设置</li>
+                <li> 账号安全设置</li>
+                <li> 消息设置</li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="top_bar">
+        <li id="bar_email">
+            <a href="#">
+                <img id="mail_icon" src="images/email.png">
+
+            </a>
+
+            <ul class="bar-list" id="bar-list1">
+                <li id="barlist-message">我的消息</li>
+                <li>评论</li>
+                <li>赞</li>
+                <li>帮助</li>
+
+            </ul>
+
+
+        </li>
+        <li><a href="#" class="top_bar_login" onclick="login()" id="top_log"> 登录</a></li>
+        <li><a href="zhuce.html" class="top_bar_login" id="top_close">注册</a></li>
+    </ul>
+</div>
 <!--中间部分-->
 
-    <div id="body" >
+<div id="body">
 
-        <div id="bodyleftlist">
-            <div class="body-left">
-                <ul class="left-ul" id="leftlist" >
-                    <li class="body-nav" onclick="ok(this.id)" id="ok1"><a  id="aaa" onclick="aa()">推荐</a>
-                    </li>
-                    <!--<script>-->
-                        <!--function aa() {-->
-                           <!--var a= document.getElementById("aaa").innerHTML;-->
-                            <!--alert(a)-->
+    <div id="bodyleftlist">
+        <div class="body-left">
+            <ul class="left-ul" id="leftlist">
+                <li class="body-nav" onclick="ok(this.id)" id="ok1"><a id="aaa" onclick="aa()">推荐</a>
+                </li>
+                <!--<script>-->
+                <!--function aa() {-->
+                <!--var a= document.getElementById("aaa").innerHTML;-->
+                <!--alert(a)-->
 
-                        <!--}-->
-                    <!--</script>-->
-                    <li class="body-nav" onclick="ok(this.id)" id="ok2"><a>趣点1</a>
-                        <div class="leftlist-btn" >
-                            <img src="images/delete.png" onclick="deleteline(this)" >
-                        </div>
+                <!--}-->
+                <!--</script>-->
+                <li class="body-nav" onclick="ok(this.id)" id="ok2"><a>趣点1</a>
+                    <div class="leftlist-btn">
+                        <img src="images/delete.png" onclick="deleteline(this)">
+                    </div>
 
 
-                    </li>
-                    <li class="body-nav" onclick="ok(this.id)" id="ok3"><a>趣点2</a>
-                        <div class="leftlist-btn" onclick="deleteline(this)">
-                            <img src="images/delete.png" >
-                        </div>
+                </li>
+                <li class="body-nav" onclick="ok(this.id)" id="ok3"><a>趣点2</a>
+                    <div class="leftlist-btn" onclick="deleteline(this)">
+                        <img src="images/delete.png">
+                    </div>
 
-                    </li>
-                    <li class="body-nav" onclick="ok(this.id)" id="free" ><a>自定义</a>
-                        <div class="leftlist-btn" onclick="addli()">
-                            <img src="images/add.png" >
-                        </div>
-                    </li>
-                    <!--<li class="body-nav" onclick="genggai()"><a>新的Li</a>-->
-                        <!--<div class="leftlist-btn" onclick="deleteline(this)">-->
-                            <!--<img src="images/delete.png" >-->
-                        <!--</div>-->
+                </li>
+                <li class="body-nav" onclick="ok(this.id)" id="free"><a>自定义</a>
+                    <div class="leftlist-btn" onclick="addli()">
+                        <img src="images/add.png">
+                    </div>
+                </li>
+                <!--<li class="body-nav" onclick="genggai()"><a>新的Li</a>-->
+                <!--<div class="leftlist-btn" onclick="deleteline(this)">-->
+                <!--<img src="images/delete.png" >-->
+                <!--</div>-->
 
-                    <!--</li>-->
+                <!--</li>-->
 
-                </ul>
-                <div id="leftclose">让趣点现身吧~</div>
+            </ul>
+            <div id="leftclose">让趣点现身吧~</div>
 
+        </div>
+    </div>
+<div id="body-bg">
+    <div id="body-center">
+        <!--轮播模块-->
+
+        <div class="box">
+            <div class="cont">
+                <a><img src="images/page.png"/></a>
+                <a class="hide"><img src="images/page2.png"/></a>
+                <a class="hide"><img src="images/page3.png"/></a>
+                <a class="hide"><img src="images/page4.png"/></a>
+            </div>
+            <div class="item">
+                <a class="seld">·</a>
+                <a>·</a>
+                <a>·</a>
+                <a>·</a>
             </div>
         </div>
+        <div class="center-tab" id="center-content">
+            <!--tab切换-->
 
-        <div id="body-center">
-            <!--轮播模块-->
+            <!--中间标题栏-->
+            <div class="center-nav" id="centertitle">
+                <ul class="center-tab">
+                    <li class="tabcur">热门话题</li>
+                    <li>关注动态</li>
+                </ul>
 
-            <div class="box">
-                <div class="cont">
-                    <a><img src="images/page.png" /></a>
-                    <a class="hide"><img src="images/page2.png" /></a>
-                    <a class="hide"><img src="images/page3.png" /></a>
-                    <a class="hide"><img src="images/page4.png" /></a>
-                </div>
-                <div class="item">
-                    <a class="seld">·</a>
-                    <a>·</a>
-                    <a>·</a>
-                    <a>·</a>
-                </div>
             </div>
-            <div class="center-tab" id="center-content" >
-                <!--tab切换-->
-
-                <!--中间标题栏-->
-                <div class="center-nav" id="centertitle">
-                    <ul class="center-tab">
-                        <li class="tabcur" >热门话题</li>
-                        <li >关注动态</li>
-                    </ul>
-
-                </div>
-                <!--下面内容部分-->
-                <div class="center-panel" id="pannels" >
-                    <!--热门话题面板-->
-                    <div  id="hot-cur">
-                        <ul class="cur">
-                            <li class="post">
-                                <div class="post-user">
-                                    <span><img src="images/userlogo.png" class="post-photo"></span>
-
-                                </div>
-                                <div class="list-right">
-                                    <div class="post-name">用户名</div>
-                                    <div class="post-bar" >趣点1</div>
-                                </div>
-                                <div class="list-botton">
-                                    <a class="post-content" href="xiangqing.html" target="_blank">
-                                        <div class="title"><span>从设置密码看你的感情 楼下大波经典文字笑话</span></div>
-                                        <div class="data-reactid">
-                                            <div class="content">
-                                                <div class="desc">
+            <!--下面内容部分-->
+            <div class="center-panel" id="pannels">
+                <!--热门话题面板-->
+                <div id="hot-cur">
+                    <ul class="cur">
+                        <li class="post">
+                            <div class="post-user" >
+                                <span><img src="images/userlogo.png" class="post-photo"></span>
+                            </div>
+                            <div class="list-right" >
+                                <div class="post-name">用户名</div>
+                                <div class="post-bar">趣点1</div>
+                            </div>
+                            <div style="clear: both"></div>
+                            <div class="list-botton">
+                                <a class="post-content" href="xiangqing.html" target="_blank">
+                                    <div class="title"><span>从设置密码看你的感情 楼下大波经典文字笑话</span></div>
+                                    <div class="data-reactid">
+                                        <div class="content">
+                                            <div class="desc">
                                 <span>两个女鬼阴间聊天问对方是怎么死的~~~
 A女：我是被冻死的！
 B女：我是心脏病突然发作而死的，因为我怀疑我先生有外遇而提早回家，看他自己一個人在看電視，不合常理
 A女：后來呢？
 B女:我直觉确定有个女人藏在我家裡，我找遍了全屋子，上至屋頂，下至地下室，看床底，搜衣柜，都翻遍了，最后累得心脏病突然发作死了
 A女：真太可惜了，你要打开冰箱看一看 咱俩都死不了了！</span>
-                                                </div>
-
-                                                <div class="image">
-                                                    <img src="http://wx2.sinaimg.cn/mw690/c511d411gy1fhgvky3z1sj20hs0bugo2.jpg">
-                                                </div>
-                                            </div>
-                                            <div class="post-foot">
-                                                <div class="time">2017-7</div>
-                                                <div class="num">
-                                                    <span>000评论</span>
-                                                    <span>000赞</span>
-                                                    <span>000收藏</span>
-                                                </div>
                                             </div>
 
+                                            <div class="image">
+                                                <img src="http://wx2.sinaimg.cn/mw690/c511d411gy1fhgvky3z1sj20hs0bugo2.jpg">
+                                            </div>
+                                        </div>
+                                        <div class="post-foot" >
+                                            <div class="time">2017-7</div>
+                                            <div class="num">
+                                                <span>000评论</span>
+                                                <span>000赞</span>
+                                                <span>000收藏</span>
+                                            </div>
+                                            <div style="clear: both"></div>
 
                                         </div>
-                                    </a></div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--关注动态面板-->
-                    <div   id="like-cur">
-                        <ul  >
-                            <li class="post">
-                                <div class="post-user">
-                                    <span><img src="images/userlogo.png" class="post-photo"></span>
 
-                                </div>
-                                <div class="list-right">
-                                    <div class="post-name">用户名2</div>
-                                    <div class="post-bar" >趣点1</div>
-                                </div>
-                                <div class="list-botton">
-                                    <a class="post-content" href="xiangqing.html" target="_blank">
-                                        <div class="title"><span>大波经典文字笑话</span></div>
-                                        <div class="data-reactid">
-                                            <div class="content">
-                                                <div class="desc">
+
+                                    </div>
+                                </a></div>
+                        </li>
+
+                    </ul>
+                </div>
+                <!--关注动态面板-->
+                <div id="like-cur">
+                    <ul>
+                        <li class="post">
+                            <div class="post-user">
+                                <span><img src="images/userlogo.png" class="post-photo"></span>
+
+                            </div>
+                            <div class="list-right">
+                                <div class="post-name">用户名2</div>
+                                <div class="post-bar">趣点1</div>
+                            </div>
+                            <div style="clear: both"></div>
+                            <div class="list-botton">
+                                <a class="post-content" href="xiangqing.html" target="_blank">
+                                    <div class="title"><span>大波经典文字笑话</span></div>
+                                    <div class="data-reactid">
+                                        <div class="content">
+                                            <div class="desc">
                                 <span>
 A女：我是被冻死的！
 B女：我是心脏病突然发作而死的，因为我怀疑我先生有外遇而提早回家，看他自己一個人在看電視，不合常理
-A女：后來呢？
-B女:我直觉确定有个女人藏在我家裡，我找遍了全屋子，上至屋頂，下至地下室，看床底，搜衣柜，都翻遍了，最后累得心脏病突然发作死了
-A女：真太可惜了，你要打开冰箱看一看 咱俩都死不了了！</span>
-                                                </div>
-
-                                                <div class="image">
-                                                    <img src="http://wx2.sinaimg.cn/mw690/c511d411gy1fhgvky3z1sj20hs0bugo2.jpg">
-                                                </div>
-                                            </div>
-                                            <div class="post-foot">
-                                                <div class="time">2017-8</div>
-                                                <div class="num">
-                                                    <span>000评论</span>
-                                                    <span>000赞</span>
-                                                    <span>000收藏</span>
-                                                </div>
+A女：后來呢？！</span>
                                             </div>
 
-
+                                            <div class="image">
+                                                <img src="http://wx2.sinaimg.cn/mw690/c511d411gy1fhgvky3z1sj20hs0bugo2.jpg">
+                                            </div>
                                         </div>
-                                    </a></div>
-                            </li>
-                        </ul>
-                    </div>
+                                        <div class="post-foot">
+                                            <div class="time">2017-8</div>
+                                            <div class="num">
+                                                <span>000评论</span>
+                                                <span>000赞</span>
+                                                <span>000收藏</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                        </div>
 
+
+                                    </div>
+                                </a></div>
+                        </li>
+                    </ul>
                 </div>
+
             </div>
-
-
-
         </div>
 
-
-        <div id="body-right">
-            <div class="user">
-
-                <img src="images/userlogo.png">
-                <p>用户名</p>
-                <p>经验值:<span>000</span></p>
-                <p class="like"> <span>兴趣一</span><span>兴趣二</span></p>
-            </div>
-            <div class="paihang">
-                <div>排行榜</div>
-                <ol class="pai-list" type="1">
-                    <li>新闻标题</li>
-                    <li>新闻标题</li>
-                    <li>新闻标题</li>
-                    <li>新闻标题</li>
-                    <li>新闻标题</li>
-                    <li>新闻标题</li>
-                    <li>新闻标题</li>
-                    <li>新闻标题</li>
-                    <li>新闻标题</li>
-                    <li>新闻标题</li>
-
-                </ol>
-            </div>
-
-        </div>
 
     </div>
 
-    <footer>
+
+    <div id="body-right">
+        <div class="user">
+
+            <img src="images/userlogo.png">
+            <p>用户名</p>
+            <p>经验值:<span>000</span></p>
+            <p class="like"><span>兴趣一</span><span>兴趣二</span></p>
+        </div>
+        <div class="paihang">
+            <div>排行榜</div>
+            <ol class="pai-list" type="1">
+                <li>新闻标题</li>
+                <li>新闻标题</li>
+                <li>新闻标题</li>
+                <li>新闻标题</li>
+                <li>新闻标题</li>
+                <li>新闻标题</li>
+                <li>新闻标题</li>
+                <li>新闻标题</li>
+                <li>新闻标题</li>
+                <li>新闻标题</li>
+
+            </ol>
+        </div>
+
+    </div>
+    <div style="clear: both"></div>
+
+</div>
+
+</div>
+
+<footer>
 
 
-        <div class="foot1">
-            联系我们
-            <ul >
-                <li>tel:1234567890</li>
-                <li>email:12345678@qq.com</li>
-                <li>time:9:00-18:00</li>
-            </ul>
-        </div>
-        <div class="foot">
-            合作&认证
-            <ul>
-                <li><a href="http://www.scuec.edu.cn" target="_blank">中南民族大学</a></li>
-                <li><a href="http://www.ruanko.com" target="_blank">软酷网络科技有限公司</a></li>
-            </ul>
-        </div>
-        <div class="foot">
-            淘趣帮助
-            <ul>
-                <li>常见问题</li>
-                <li>自助服务</li>
-            </ul>
-        </div>
-    </footer>
+    <div class="foot1">
+        联系我们
+        <ul>
+            <li>tel:1234567890</li>
+            <li>email:12345678@qq.com</li>
+            <li>time:9:00-18:00</li>
+        </ul>
+    </div>
+    <div class="foot">
+        合作&认证
+        <ul>
+            <li><a href="http://www.scuec.edu.cn" target="_blank">中南民族大学</a></li>
+            <li><a href="http://www.ruanko.com" target="_blank">软酷网络科技有限公司</a></li>
+        </ul>
+    </div>
+    <div class="foot">
+        淘趣帮助
+        <ul>
+            <li>常见问题</li>
+            <li>自助服务</li>
+        </ul>
+    </div>
+</footer>
 
 </body>
 </html>

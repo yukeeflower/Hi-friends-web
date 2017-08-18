@@ -32,6 +32,7 @@ function showAuto() {
 window.onload = function () {
     topshow();
     tabshow();
+    jiazai();
     // tiaozhuan();
 }
 
@@ -355,4 +356,94 @@ function xiugai_save() {
 
 
 }
+//加载文章
+ function jiazai () {
+        $.ajax({
+            type: "GET",
+            url: "http://172.20.10.8:8080/topic/getallhottopics",
+            contentType: "application/json;charset=utf-8",
+//                                        data: JSON.stringify({
+//                                                    username: $('#username').val(),
+//                                                    password: $('#password').val()
+//                                                }
+//                                        ),
+            dataType: "json",
+            success: function logindata(msg) {
+                if (msg.code == "S01") {
+                    var data = msg.contents;
+                    $.each(data, function (i, item) {
+                        var topic = item;
+                        var url = "xiangqing.html?id="+topic.id;
+                        $(".cur").prepend("<li class='post' >" +
+                            "<div id='userid' style='visibility: hidden;height: 5px;font-size: 5px'>"+topic.id+"</div>"+
+                            "<div class='post-user'>" +
+                                 "<span><img src='images/userlogo.png' class='post-photo'></span>" +
+                            "</div>" +
+                            "<div class='list-right'>" +
+                                 "<div class='post-name'>"+topic.topicUser+"</div>" +
+                                 "<div class='post-bar' >趣点1</div>" +
+                            " </div>" +
+                            '<div style="clear: both"></div>'+
+                            "<div class='list-botton'>" +
+                                 '<a class="post-content" href="'+url+'"  target="_blank" >' +
+                                      "<div class='title'><span>"+topic.topicTitle+"</span></div>" +
+                                      "<div class='data-reactid'>" +
+                                           "<div class='content'>" +
+                                               " <div class='desc'>" +
+                                                    " <span>" + topic.topicContent+ "</span>" +
+                                                "</div>" +
+                                                "<div class='image'>" +
+                                                      "<img src='http://wx2.sinaimg.cn/mw690/c511d411gy1fhgvky3z1sj20hs0bugo2.jpg'>" +
+                                                "</div>" +
+                                           "</div>" +
+                                            "<div class='post-foot'> " +
+                                                 "<div class='time'>"+new Date(parseFloat(topic.createTime)).format("yyyy-MM-dd hh:mm:ss")+"</div> " +
+                                                 "<div class='num'>" +
+                                                      "<span>"+topic.topicRemark+"评论"+"</span>"+
+                                                      "<span>"+topic.topicZan+"赞"+"</span>" +
+                                                      "<span>"+topic.topicMark+"收藏"+"</span>" +
+                                                 "</div>" +
+                                                 '<div style="clear: both"></div>'+
+                                            "</div>"+
+                                      "</div>"+
+                                "</a>"+
+                            "</div>"+
+                            "</li>"
+                        )
 
+                    });
+                }
+                else {
+                    alert(msg.message);
+                }
+            },
+            error: function error(msg) {
+                alert(msg);
+            }
+        });
+
+
+    }
+
+//后台返回timestamp时间转换
+Date.prototype.format = function(format) {
+    var o = {
+        "M+" : this.getMonth() + 1,// month
+        "d+" : this.getDate(),// day
+        "h+" : this.getHours(),// hour
+        "m+" : this.getMinutes(),// minute
+        "s+" : this.getSeconds(),// second
+        "q+" : Math.floor((this.getMonth() + 3) / 3),// quarter
+        "S" : this.getMilliseconds()
+        // millisecond
+    };
+    if (/(y+)/.test(format) || /(Y+)/.test(format)) {
+        format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    }
+    for ( var k in o) {
+        if (new RegExp("(" + k + ")").test(format)) {
+            format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
+        }
+    }
+    return format;
+};
