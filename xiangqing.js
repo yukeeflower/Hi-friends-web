@@ -103,7 +103,41 @@ function goodadd(a) {
 
 //创建说说
 function fabiao() {
-
+    $("#comments-cell1").prepend( "<li id='newcell1'>" +
+        "<div class='comments-cell' > " +
+        "<div class='comments-logo' >" +
+        "<img src='images/userlogo.png'>" +
+        "</div> " +
+        "<div class='comments-right'>" +
+        " <div class='comments' > " +
+        "<span>用户名:</span> " +
+        "<span id='contents'>评论内容</span>" +
+        " </div> " +
+        "<div style='clear: both'>" +
+        "</div> " +
+        "<img class='picture' >" +
+        " <div class='comments-cell-foot'>" +
+        " <div class='comments-time'>" +
+        "<span id='time' >time</span>" +
+        "</div> " +
+        "<div class='comments-foot' > " +
+        "<span  id='delspan' style='display:block;float: left;margin-right: 20px;font-size: 15px;line-height: 25px' onclick='del(this)'>删除</span>"+
+        "<span>回复</span> " +
+        "<span>|</span> " +
+        "<img src='images/good.png' class='goodpic'onclick='goodadd(this)' >" +
+        " <span class='comments-goodnum'>000</span>" +
+        " <div style='clear: both'>" +
+        "</div> " +
+        "</div> " +
+        "<div style='clear: both'>" +
+        "</div> " +
+        "</div>" +
+        " </div> " +
+        "<div style='clear: both'>" +
+        "</div>" +
+        " </div>" +
+        "</li>"
+    )
                 $.ajax({
                     type: "POST",
                     url: "http://172.20.10.8/topic/getallremarkbyid?topicid=?",
@@ -111,55 +145,16 @@ function fabiao() {
                     dataType : "json",
                     success:function logindata(msg) {
                         if (msg.code == "S01") {
-                            var data = msg.contents;
-                            $.each(data, function (i, item) {
-                            $("#comments-cell1").prepend( "<li id='newcell1'>" +
-                                "<div class='comments-cell' > " +
-                                "<div class='comments-logo' >" +
-                                "<img src='images/userlogo.png'>" +
-                                "</div> " +
-                                "<div class='comments-right'>" +
-                                " <div class='comments' > " +
-                                "<span>"+":</span> " +
-                                "<span id='contents'>评论内容</span>" +
-                                " </div> " +
-                                "<div style='clear: both'>" +
-                                "</div> " +
-                                "<img class='picture' >" +
-                                " <div class='comments-cell-foot'>" +
-                                " <div class='comments-time'>" +
-                                "<span id='time' >time</span>" +
-                                "</div> " +
-                                "<div class='comments-foot' > " +
-                                "<span  id='delspan' style='display:block;float: left;margin-right: 20px;font-size: 15px;line-height: 25px' onclick='del(this)'>删除</span>"+
-                                "<span>回复</span> " +
-                                "<span>|</span> " +
-                                "<img src='images/good.png' class='goodpic'onclick='goodadd(this)' >" +
-                                " <span class='comments-goodnum'>000</span>" +
-                                " <div style='clear: both'>" +
-                                "</div> " +
-                                "</div> " +
-                                "<div style='clear: both'>" +
-                                "</div> " +
-                                "</div>" +
-                                " </div> " +
-                                "<div style='clear: both'>" +
-                                "</div>" +
-                                " </div>" +
-                                "</li>"
-                            )
+
                         }
                         else {
                             alert(msg.message);
                         }
-
-                    }
                     },
                     error:function error(msg) {
                         alert(msg);
                     }
-                })
-};
+                });
 
     tianjia();
 
