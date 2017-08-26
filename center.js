@@ -175,7 +175,7 @@ function ok1() {
     document.getElementById("ok3").style.background = "rgba(190,200,221,1)";
     document.getElementById("center-my").style.display="block";
     document.getElementById("center-safe").style.display="none";
-    document.getElementById("center-message").style.display="none";
+    document.getElementById("centermessage").style.display="none";
 }
 function ok2() {
     document.getElementById("ok2").style.background = "rgba(147,165,195,1)";
@@ -183,7 +183,7 @@ function ok2() {
     document.getElementById("ok3").style.background = "rgba(190,200,221,1)";
     document.getElementById("center-my").style.display="none";
     document.getElementById("center-safe").style.display="block";
-    document.getElementById("center-message").style.display="none";
+    document.getElementById("centermessage").style.display="none";
 }
 function ok3() {
     document.getElementById("ok3").style.background = "rgba(147,165,195,1)";
@@ -191,7 +191,7 @@ function ok3() {
     document.getElementById("ok1").style.background = "rgba(190,200,221,1)";
     document.getElementById("center-my").style.display="none";
     document.getElementById("center-safe").style.display="none";
-    document.getElementById("center-message").style.display="block";
+    document.getElementById("centermessage").style.display="block";
 }
 
 //图像点击事件

@@ -196,11 +196,15 @@ body{
 #body-center #center-nav #nav li{
     background:#fff;
     float: left;
-    width: 198px;
+    width: 298px;
     height: 40px;
     /*border: 1px solid grey;*/
     margin: 0 auto;
     text-align: center;
+
+}
+#body-center #center-nav #nav #nav1{
+    border-bottom:2px solid #5BAF14;
 
 }
 #body-center #center-nav #nav p{
@@ -211,8 +215,11 @@ body{
     /*background: red;*/
     height: 40px;
     width: 70px;
-    border-bottom: 2px solid #5BAF14;
 
+
+}
+#body-center #center-nav #nav li:hover{
+    color:#54A64B ;
 }
 
 
@@ -231,16 +238,196 @@ body{
     /*margin-right: 10px;*/
 }
 #body-center #center-content #content-left #left-nav li{
+    /*background: yellow;*/
     margin-top: 5px;
     float: left;
     width: 99px;
     text-align: center;
-
 }
+#body-center #center-content #content-left #left-nav li:hover{
+    color:#54A64B ;
+}
+#body-center #center-content #content-left #likelist{
+    margin-top: 20px;
+    width: 200px;
+    background: #fff;
+    display: none;
+}
+#body-center #center-content #content-left #likelist #liketitle {
+    padding: 5px;
+    /*background: red;*/
+    font-size: 15px;
+    color: #54A64B;
+    background:rgba(147,165,195,0.2);
+;
+}
+#body-center #center-content #content-left #likelist #liketitle img{
+    width: 15px;
+    height: 15px;
+}
+#body-center #center-content #content-left #likelist #liketitle span{
+    margin-left: 5px;
+}
+#body-center #center-content #content-left #likelist #likemessage{
+    /*background: yellow;*/
+    margin: 5px;
+    font-size: 15px;
+}
+#body-center #center-content #content-left #likelist #likemessage .like-cell{
+    /*background: red;*/
+    margin-bottom: 5px;
+}
+#body-center #center-content #content-left #likelist #likemessage .likenums{
+    margin-left: 5px;
+}
+#body-center #center-content #content-left #likelist #likemessage .like-cell :hover{
+    color: #54A64B;
+}
+
+
+
+
 #body-center #center-content #content-right{
    float: right;
-    background: red;
+    /*background: red;*/
     width: 680px;
+
+}
+#body-center #center-content #content-right #mycontents-panel{
+    /*display: none;*/
+}
+#body-center #center-content #content-right .right-cell{
+    background: #fff;
+}
+#body-center #center-content #content-right .right-cell .cell-top{
+    /*background: yellow;*/
+    border-bottom: 1px solid grey;
+}
+
+
+/*面板公共部分样式*/
+#body-center #center-content #content-right  .userphoto img{
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin: 5px 15px 5px 5px;
+}
+#body-center #center-content #content-right  .usermessage{
+    padding-top: 8px;
+    font-size: 20px;
+}
+#body-center #center-content #content-right  span{
+    font-size: 15px;
+    margin-right: 10px;
+}
+#body-center #center-content #content-right .cell-title{
+    font-size: 25px;
+    margin: 5px ;
+}
+#body-center #center-content #content-right  .content-pic{
+    /*background: blue;*/
+    padding: 10px 0 10px 0px;
+    width: 100%;
+}
+#body-center #center-content #content-right .content-pic img{
+    width: 200px;
+    height: 150px;
+}
+#body-center #center-content #content-right .cellfoot-message{
+    float: right;
+}
+#body-center #center-content #content-right  .cellfoot-message img{
+    width: 25px;height: 25px;margin: 5px 5px 0 0px;
+}
+#body-center #center-content #content-right  .cellfoot-message span{
+    margin: 5px;
+    /*background: red;*/
+    line-height: 25px;
+    font-size: 15px;
+}
+#body-center #center-content #content-right .cell-content{
+    /*background: red;*/
+    font-size: 15px;
+    margin: 5px ;
+}
+
+
+
+
+
+#body-center #center-content #content-right .right-cell .cell-center{ border-bottom: 1px solid grey}
+#body-center #center-content #content-right .right-cell .cell-foot{
+    /*background: yellow;*/
+    border-bottom: 1px solid grey;
+
+}
+
+/*收藏样式*/
+#body-center #center-content #content-right #favorite-panel {
+    display: none;
+
+}
+#body-center #center-content #content-right #favorite-panel .favorite-cell{
+    background: #fff;
+}
+#body-center #center-content #content-right #favorite-panel .favorite-cell .favorite-top{
+    border-bottom: 1px solid grey;
+}
+#body-center #center-content #content-right #favorite-panel .favorite-cell .favorite-center{ border-bottom: 1px solid grey}
+#body-center #center-content #content-right #favorite-panel .favorite-cell .favorite-foot{
+    border-bottom: 1px solid grey;
+}
+/*关注列表*/
+#body-center #center-content #content-right #likepoint{
+    background: #fff;
+    display: none;
+}
+#body-center #center-content #content-right .point{
+    margin: 10px;
+    /*background: blue;*/
+}
+#body-center #center-content #content-right .point .pointcell{
+    /*background: yellow;*/
+    width: 395px;
+    height: 100px;
+    /*border-left: 1px solid grey;*/
+    /*border-bottom: 1px solid grey;*/
+}
+#body-center #center-content #content-right .point .pointcell .pointcell-left img{
+    /*background: red;*/
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    border-radius: 5px;
+}
+#body-center #center-content #content-right .point .pointcell .pointcell-center{
+    /*background: green;*/
+    float: left;
+    margin: 10px;
+
+}
+#body-center #center-content #content-right .point .pointcell .pointcell-center div {
+    margin-bottom: 10px;
+}
+#body-center #center-content #content-right .point .pointcell .pointcell-right button{
+    /*background: palevioletred;*/
+    position: relative;
+    bottom: -60px;
+    width: 60px;
+    height: 30px;
+    border: none;
+    background: #fff;
+    border: 1px solid grey;
+}
+/*好友列表*/
+#body-center #center-content #content-right #friendpoint{
+    background: #fff;
+    display: none;
+}
+#body-center #center-content #content-right .friendcell img{
+    width: 25px;
+    height: 25px;
 
 }
 

@@ -11,6 +11,15 @@
     </script>
 </head>
 <body>
+<script>
+    var src_0=location.href;//获取当前页面的网址
+    var centermessage=src_0.split("#");//以#分割网址
+    var id_0=centermessage[1];//获取#后的id名
+    if(id_0.length>0){//判断id是否存在
+        var display_0=document.getElementById(id_0);//找到此id
+        display_0.style.display="block";//将其display的值便为block
+    }
+</script>
 
 
 <div id="top"  >
@@ -30,7 +39,7 @@
             <a href="home.html" >首页</a>
         </li>
         <li  class="menu-title" id="myhome">
-            <a href="person.html" id="myhomeicon" >个人主页</a>
+            <a href="myhome.html" id="myhomeicon" >个人主页</a>
 
             <ul class="menu-list" id="menu-list1">
                 <li> 我的文章</li>
@@ -70,7 +79,7 @@
 <div id="body" >
     <div id="body-left">
         <ul id="left-ul">
-            <div>我的设置中心</div>
+            <!--<div>我的设置中心</div>-->
             <li class="body-nav" id="ok1" onclick="ok1()"><p> <a href="#">个人信息设置</a> </p></li>
             <li class="body-nav" id="ok2" onclick="ok2()"><p> <a href="#">账号安全设置</a> </p></li>
             <li class="body-nav" id="ok3" onclick="ok3()"><p> <a href="#">消息设置</a> </p></li>
@@ -167,7 +176,7 @@
             </form>
 
         </div>
-        <div id="center-message">
+        <div id="centermessage">
 
             <div id="message-nav">
                 <div id="message-nav2"class="messagenav" onclick="message1()">收到的评论</div>

@@ -69,3 +69,51 @@ function topshow() {
         mailicon.src = 'images/email.png';
     }
 }
+//选择出现的面板
+function myplay() {
+    document.getElementById('nav1').style.borderBottom='2px solid #5BAF14';
+    document.getElementById('nav2').style.borderBottom='none';
+
+    document.getElementById('mycontents-panel').style.display='block';
+    document.getElementById('likelist').style.display='none';
+    document.getElementById('favorite-panel').style.display='none';
+    document.getElementById('likepoint').style.display='none'
+    document.getElementById("friendpoint").style.display='none';
+
+
+}
+function likeplay() {
+    document.getElementById('nav1').style.borderBottom='none';
+    document.getElementById('nav2').style.borderBottom='2px solid #5BAF14';
+
+    document.getElementById('mycontents-panel').style.display='none';
+    document.getElementById('likepoint').style.display='none';
+    document.getElementById("friendpoint").style.display='none';
+
+    document.getElementById('likelist').style.display='block';
+    document.getElementById('favorite-panel').style.display='block';
+
+}
+//选择出现列表
+function likepoint() {
+    document.getElementById('likepoint').style.display='block';
+    document.getElementById("friendpoint").style.display='none';
+
+    document.getElementById('mycontents-panel').style.display='none';
+    document.getElementById('favorite-panel').style.display='none';
+    document.getElementById('likelist').style.display='none';
+
+    document.getElementById('nav2').style.borderBottom='none';
+    document.getElementById('nav1').style.borderBottom='none';
+}
+function friendpoint() {
+    document.getElementById("friendpoint").style.display='block';
+
+    document.getElementById('likepoint').style.display='none'
+    document.getElementById('mycontents-panel').style.display='none';
+    document.getElementById('favorite-panel').style.display='none';
+    document.getElementById('likelist').style.display='none';
+    document.getElementById('nav2').style.borderBottom='none';
+    document.getElementById('nav1').style.borderBottom='none';
+
+}

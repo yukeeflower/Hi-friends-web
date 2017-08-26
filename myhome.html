@@ -21,7 +21,7 @@
     </ul>
     <ul class="top_menu" onclick="tiaozhuan()">
         <li id="home"  class="menu-title">
-            <a href="home.html" >首页</a>
+            <a href="home.html" href="home.html" target="_parent">首页</a>
         </li>
         <li  class="menu-title" id="myhome">
             <a id="myhomeicon" >个人主页</a>
@@ -33,7 +33,7 @@
             </ul>
         </li>
         <li id="user" class="menu-title">
-            <a id="usericon" href="center.html" >用户中心</a>
+            <a id="usericon" href="center.html" target="_parent" >用户中心</a>
             <ul class="menu-list" id="menu-list2">
                 <li> 个人信息设置</li>
                 <li> 账号安全设置</li>
@@ -71,25 +71,211 @@
         <div id="body-center">
             <div id="center-nav">
                 <ul id="nav" >
-                    <li><p>我的文章</p></li>
-                    <li><p>我的收藏</p></li>
-                    <li><p>我的好友</p></li>
+                    <li ><p onclick="myplay()" id="nav1">我的文章</p></li>
+                    <li ><p onclick="likeplay()" id="nav2">我的收藏</p></li>
 
                 </ul>
                 <div style="clear: both"></div>
             </div>
             <div id="center-content">
                 <div id="content-left">
-                    <ul id="left-nav">
-                        <li style="border-right: 1px solid #707070"><div>000</div><div>关注</div></li>
-                        <li><div>000</div><div>好友</div></li>
+                    <div id="left-nav">
+                        <ul >
+                            <li style="border-right: 1px solid #707070" onclick="likepoint()"><div>000</div><div>关注</div></li>
+                            <li onclick="friendpoint()"><div>000</div><div>好友</div></li>
+                            <div style="clear: both"></div>
+                        </ul>
+                    </div>
+                    <!--收藏点击出现列表-->
+                    <div id="likelist">
+                        <div id="liketitle">
+                            <img src="images/like.png">收藏<span id="likenums">000</span>
+                        </div>
+                        <ul id="likemessage">
+                            <li class="like-cell"><div><span>音乐</span><span class="likenums">000</span></div></li>
+                            <li class="like-cell"><div><span>影视</span><span class="likenums">000</span></div></li>
+                            <li class="like-cell"><div><span>运动</span><span class="likenums">000</span></div></li>
+                        </ul>
 
-                    </ul>
-                    <div style="clear: both"></div>
+                    </div>
 
                 </div>
+                <!--展示面板-->
                 <div id="content-right">
+                    <!--默认我的文章-->
+                    <div id="mycontents-panel">
+                        <ul>
+                            <li id="right-cell" class="right-cell">
+                                <div class="cell-top">
+                                    <div class="userphoto"><img src="images/userlogo.png"></div>
+                                    <div class="usermessage">
+                                        <div>用户名</div>
+                                        <div><span>time</span><span>趣点</span></div>
+                                    </div>
+                                    <div style="clear:both"></div>
+                                </div>
+                                <div class="cell-center">
+                                    <div class="cell-title">标题标题标题</div>
+                                    <div class="cell-content">
+                                        <div class="content-font">文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字
+                                            内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容</div>
+                                        <div class="content-pic"><img src="images/page.png"></div>
+                                    </div>
+                                </div>
+                                <div class="cell-foot">
+                                    <div class="cellfoot-message"><span>000</span><img src="images/comments.png"></div>
+                                    <div class="cellfoot-message"><span>000</span><img src="images/good.png"> </div>
+                                    <div class="cellfoot-message"><span>000</span><img src="images/favor.png"> </div>
+                                    <div style="clear: both"></div>
+                                </div>
+                            </li>
+                        </ul>
 
+                    </div>
+                    <!--收藏面板-->
+                    <div id="favorite-panel">
+                        <ul>
+                            <li id="favorite-cell" class="favorite-cell">
+                                <div class="favorite-top">
+                                    <div class="userphoto"><img src="images/userlogo.png"></div>
+                                    <div class="usermessage">
+                                        <div>收藏用户名2</div>
+                                        <div><span>time</span><span>趣点</span></div>
+                                    </div>
+                                    <div style="clear:both"></div></div>
+                                <div class="favorite-center">
+                                    <div class="cell-title">标题标题标题</div>
+                                    <div class="cell-content">
+                                        <div class="content-font">文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字
+                                            内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容</div>
+                                        <div class="content-pic"><img src="images/page.png"></div>
+                                    </div>
+                                </div>
+                                <div class="favorite-foot">
+                                    <div class="cellfoot-message"><span>000</span><img src="images/comments.png"></div>
+                                    <div class="cellfoot-message"><span>000</span><img src="images/good.png"> </div>
+                                    <div class="cellfoot-message"><span>000</span><img src="images/favor.png"> </div>
+                                    <div style="clear: both"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--关注点-->
+                    <div id="likepoint">
+                        <table class="point">
+                            <tr>
+                                <td class="pointcell">
+                                    <div class="pointcell-left"><img src="images/musicbig.jpg"></div>
+                                    <div class="pointcell-center">
+                                        <div>音乐</div>
+                                        <div>关注:<span>000</span>话题:<span>000</span></div>
+                                    </div>
+                                    <div class="pointcell-right">
+                                        <button>取消关注</button>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                </td>
+                                <td class="pointcell">
+                                    <div class="pointcell-left"><img src="images/musicbig.jpg"></div>
+                                    <div class="pointcell-center">
+                                        <div>音乐</div>
+                                        <div>关注:<span>000</span>话题:<span>000</span></div>
+                                    </div>
+                                    <div class="pointcell-right">
+                                        <button>取消关注</button>
+                                    </div>
+                                    <div style="clear: both"></div></td>
+                            </tr>
+                            <tr>
+                                <td class="pointcell">
+                                    <div class="pointcell-left"><img src="images/musicbig.jpg"></div>
+                                    <div class="pointcell-center">
+                                        <div>音乐</div>
+                                        <div>关注:<span>000</span>话题:<span>000</span></div>
+                                    </div>
+                                    <div class="pointcell-right">
+                                        <button>取消关注</button>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                </td>
+                                <td class="pointcell">
+                                    <div class="pointcell-left"><img src="images/musicbig.jpg"></div>
+                                    <div class="pointcell-center">
+                                        <div>音乐</div>
+                                        <div>关注:<span>000</span>话题:<span>000</span></div>
+                                    </div>
+                                    <div class="pointcell-right">
+                                        <button>取消关注</button>
+                                    </div>
+                                    <div style="clear: both"></div></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--好友-->
+                    <div id="friendpoint">
+                        <table class="point">
+                            <tr>
+                                <td class="pointcell">
+                                    <div class="pointcell-left"><img src="images/userlogo.png"></div>
+                                    <div class="pointcell-center">
+                                        <div class="friendcell">用户名</div>
+                                        <div class="friendcell">
+                                            <span>未备注</span>
+                                            <span><img src="images/edic.png" onmouseover="this.src='images/edic2.png'" onmouseout="this.src='images/edic.png'">
+                                            </span></div>
+                                    </div>
+                                    <div class="pointcell-right">
+                                        <button>取消关注</button>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                </td>
+                                <td class="pointcell">
+                                    <div class="pointcell-left"><img src="images/userlogo.png"></div>
+                                    <div class="pointcell-center">
+                                        <div class="friendcell">用户名</div>
+                                        <div class="friendcell">
+                                            <span>未备注</span>
+                                            <span><img src="images/edic.png" onmouseover="this.src='images/edic2.png'" onmouseout="this.src='images/edic.png'">
+                                            </span></div>
+                                    </div>
+                                    <div class="pointcell-right">
+                                        <button>取消关注</button>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pointcell">
+                                    <div class="pointcell-left"><img src="images/userlogo.png"></div>
+                                    <div class="pointcell-center">
+                                        <div class="friendcell">用户名</div>
+                                        <div class="friendcell">
+                                            <span>未备注</span>
+                                            <span><img src="images/edic.png" onmouseover="this.src='images/edic2.png'" onmouseout="this.src='images/edic.png'">
+                                            </span></div>
+                                    </div>
+                                    <div class="pointcell-right">
+                                        <button>取消关注</button>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                </td>
+                                <td class="pointcell">
+                                    <div class="pointcell-left"><img src="images/userlogo.png"></div>
+                                    <div class="pointcell-center">
+                                        <div class="friendcell">用户名</div>
+                                        <div class="friendcell">
+                                            <span>未备注</span>
+                                            <span><img src="images/edic.png" onmouseover="this.src='images/edic2.png'" onmouseout="this.src='images/edic.png'">
+                                            </span></div>
+                                    </div>
+                                    <div class="pointcell-right">
+                                        <button>取消关注</button>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
                 <div style="clear: both"></div>
 

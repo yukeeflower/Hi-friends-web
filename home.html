@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:JavaScript="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>hi,趣友网的首页</title>
+
     <link href="home.css" rel="stylesheet">
+
     <script src="jquery-2.1.1/jquery.min.js" type="text/javascript"></script>
     <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
     <script src="gt.js"></script>
@@ -78,7 +80,7 @@
             <a href="#">首页</a>
         </li>
         <li class="menu-title" id="myhome">
-            <a id="myhomeicon">个人主页</a>
+            <a id="myhomeicon" href="myhome.html" target="_parent">个人主页</a>
 
             <ul class="menu-list" id="menu-list1">
                 <li> 我的文章</li>
@@ -87,7 +89,7 @@
             </ul>
         </li>
         <li id="user" class="menu-title">
-            <a id="usericon" href="center.html">用户中心</a>
+            <a id="usericon" href="center.html" target="_parent">用户中心</a>
             <ul class="menu-list" id="menu-list2">
                 <li> 个人信息设置</li>
                 <li> 账号安全设置</li>
@@ -97,10 +99,14 @@
     </ul>
     <ul class="top_bar">
         <li id="bar_email">
-            <a href="#">
+            <a href="JavaScript:void(0)" onclick="skip01()">
                 <img id="mail_icon" src="images/email.png">
-
             </a>
+            <script>
+                function skip01(){
+                    window.location.href="center.html#centermessage";  //跳转到B.html页面，#s 是锚点，这里不要空格
+                }
+            </script>
 
             <ul class="bar-list" id="bar-list1">
                 <li id="barlist-message">我的消息</li>
@@ -162,7 +168,6 @@
 
         </div>
     </div>
-<div id="body-bg">
     <div id="body-center">
         <!--轮播模块-->
 
@@ -293,7 +298,6 @@ A女：后來呢？！</span>
 
     </div>
 
-
     <div id="body-right">
         <div class="user">
 
@@ -322,7 +326,6 @@ A女：后來呢？！</span>
     </div>
     <div style="clear: both"></div>
 
-</div>
 
 </div>
 

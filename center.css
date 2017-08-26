@@ -178,9 +178,10 @@ body{
     float: left;
     width: 200px;
     /*border: 1px solid #CBD2E4;*/
-    border-top: none;
-    border-right: none;
+    /*border-top: none;*/
+    /*border-right: none;*/
     text-align: center;
+    margin-top: 10px;
 }
 #body-left #left-ul {
 
@@ -235,12 +236,12 @@ body{
 #body-center #center-my{
     /*background: blue;*/
     background: #fff;
-    border-radius: 10px;
+    /*border-radius: 5px;*/
+    margin-top: 10px;
 }
 #body-center #center-my #my-nav {
 
     /*background: green;*/
-    margin-top: 45px;
     /*border-top: 1px solid #CBD2E4;*/
 
 }
@@ -334,11 +335,10 @@ body{
 
 #body-center #center-safe{
     /*background: green;*/
-    margin-top: 20px;
+    margin-top: 10px;
     width: 864px;
     height: 508px;
     background: #fff;
-    border-radius: 10px;
     display: none;
 
 }
@@ -381,58 +381,57 @@ body{
 
 
 
-#body-center #center-message{
+#body-center #centermessage{
     /*background: yellow;*/
-    margin-top: 20px;
+    margin-top: 10px;
     /*text-align: center;*/
     /*width: 864px;*/
     /*height: 508px;*/
     background: #fff;
-    border-radius: 10px;
     display: none;
 }
-#body-center #center-message #message-content1{
+#body-center #centermessage #message-content1{
     display: block;
 }
-#body-center #center-message #message-content2{
+#body-center #centermessage #message-content2{
     display: none;
 }
 
-#body-center #center-message  #message-nav .messagenav{
+#body-center #centermessage  #message-nav .messagenav{
     margin-top: 20px;
     margin-left: 10px;
     font-size: 20px;
 }
-#body-center #center-message  #message-nav div{
+#body-center #centermessage  #message-nav div{
     float: left;
 }
-#body-center #center-message  #message-nav #message-nav2{
+#body-center #centermessage  #message-nav #message-nav2{
     border-bottom: 3px solid #54A64B;
 }
 
-#body-center #center-message .userlogo{
+#body-center #centermessage .userlogo{
     width: 40px;
     height: 40px;
     margin-top: 10px;
     margin-left: 10px;
 }
-#body-center #center-message .nav1 span{
+#body-center #centermessage .nav1 span{
     margin-left: 10px;
     margin-bottom: 10px;
     /*float: left;*/
 }
-#body-center #center-message .content1{
+#body-center #centermessage .content1{
     /*background: blue;*/
     /*margin-left: 60px;*/
     margin-top: 30px;
     border-bottom: 1px solid #CBD2E4;
 }
 
-#body-center #center-message  .message-content p{
+#body-center #centermessage  .message-content p{
     font-size: 15px;
     margin-bottom: 10px;
 }
-#body-center #center-message  .message-content div{
+#body-center #centermessage  .message-content div{
     border-bottom: 1px solid #CBD2E4;
     /*background: yellow;*/
 
@@ -441,7 +440,7 @@ body{
 /*#body-center #center-message  #message-content2{*/
     /*background: green;*/
 /*}*/
-#body-center #center-message  #message-content2 #zan-neirong{
+#body-center #centermessage  #message-content2 #zan-neirong{
 
 }
 /*#body-center #center-message  #message-content2 .userlogo{*/
@@ -450,7 +449,7 @@ body{
     /*margin-top: 10px;*/
     /*margin-left: 10px;*/
 /*}*/
-#body-center #center-message  #message-content2    #zan-content{
+#body-center #centermessage  #message-content2    #zan-content{
     border-top: 1px solid #CBD2E4;
 }
 
